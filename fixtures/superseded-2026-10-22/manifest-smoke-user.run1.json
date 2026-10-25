@@ -1,0 +1,64 @@
+{
+  "arm": "kilo/poolside/laguna-s-2.1:free/json-object/union-nullable",
+  "startedAt": "2026-10-22T12:32:17.000Z",
+  "finishedAt": "2026-10-22T12:35:03.249Z",
+  "durationMs": 166249,
+  "gitSha": "34c9b6e28c2032c581c747ef452760d057b2bef6",
+  "gitDirty": true,
+  "route": {
+    "provider": "kilo",
+    "baseUrl": "https://api.kilo.ai/api/gateway/v1",
+    "keySource": "file:/home/p31/.local/share/opencode/auth.json#kilo.key"
+  },
+  "model": {
+    "requested": "poolside/laguna-s-2.1:free",
+    "served": {
+      "poolside/laguna-s-2.1:free": 2
+    }
+  },
+  "mode": "json-object",
+  "constraintMode": "json-object",
+  "promptContract": {
+    "propContract": true,
+    "nodeShape": true,
+    "contractRole": "user"
+  },
+  "schemaDialect": "union-nullable",
+  "scorerVersion": "requirements-2.0.0",
+  "armFingerprint": "0ee52e11dd13ca4deaf03cf1dfc4b35364c5a6accbe7707bd9a565200b92318c",
+  "artifacts": {
+    "promptFile": "packages/genui/fixtures/live-prompts.json",
+    "promptSetHash": "e7b0a4034560027706486b70592d1549178e1b11c18bf9b23b0c6491921d1761",
+    "requirementSetHash": "bee9737064c587eed8bcb182b7079c1ad5f7cc79729b30e3c23f122dedf6e7d3"
+  },
+  "batch": {
+    "index": 6,
+    "resumed": true,
+    "promptsInThisBatch": 1,
+    "promptsInArm": 6,
+    "skippedAlreadyMeasured": 5,
+    "windowStartedAt": "2026-10-22T12:32:17.000Z",
+    "circuitBreakerOpen": false
+  },
+  "totals": {
+    "prompts": 6,
+    "compiled": 6,
+    "reachedTheModel": 6,
+    "modelCalls": 12,
+    "tokens": 8292,
+    "rateLimitHits": 0,
+    "providerErrors": 0
+  },
+  "metrics": {
+    "firstPassRate": 1,
+    "compilePassRate": 1,
+    "requirementPassRate": 1,
+    "avgRequirementRate": 1,
+    "wrongValidSchemaRate": 0,
+    "healedRate": 0,
+    "healKinds": {},
+    "avgRepairIterations": 1,
+    "repairsPerAcceptedSpec": 1,
+    "tokensPerAcceptedSpec": 1382
+  }
+}

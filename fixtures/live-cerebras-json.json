@@ -1,0 +1,1857 @@
+{
+  "mode": "json-object",
+  "model": "qwen-3.8-27b",
+  "provider": "cerebras",
+  "providerLabel": "Cerebras",
+  "routed": false,
+  "baseUrl": "https://api.cerebras.ai/v1",
+  "keySource": "env:CEREBRAS_API_KEY",
+  "servedModels": {
+    "qwen-3.8-27b": 57
+  },
+  "constraintMode": "json-object",
+  "schemaDialect": "union-nullable",
+  "propContract": true,
+  "nodeShape": true,
+  "contractRole": "user",
+  "contractTextHash": "d925db81c42f81bda22d22b6c8565be045dd3c72f4400746146843839b560751",
+  "contractTextRows": {
+    "d925db81c42f81bda22d22b6c8565be045dd3c72f4400746146843839b560751": 30
+  },
+  "promptCount": 30,
+  "firstPassRate": 0.6666666666666666,
+  "compilePassRate": 0.7666666666666667,
+  "endToEndSuccessRate": 0.8695652173913043,
+  "endToEndReached": 23,
+  "endToEndSucceeded": 20,
+  "requirementPassRate": 0.8695652173913043,
+  "avgRequirementRate": 0.9586956521739131,
+  "avgRequirementsFailed": 0.13043478260869565,
+  "requirementsPerSpec": 2.7,
+  "avgComponentF1": 0.6262619023488588,
+  "avgPropAccuracy": 0.13555900621118014,
+  "avgRootPropAccuracy": 0.20289855072463767,
+  "wrongValidSchemaRate": 0.13043478260869565,
+  "healedRate": 0,
+  "healKinds": {},
+  "healKindsRate": {},
+  "avgRepairIterations": 0.8333333333333334,
+  "repairsPerAcceptedSpec": 1.0869565217391304,
+  "avgTokens": 2280.266666666667,
+  "tokensPerAcceptedSpec": 2974.2608695652175,
+  "avgLatencyMs": 2083.8,
+  "totalTokens": 68408,
+  "callCount": 57,
+  "rateLimitHits": 0,
+  "providerErrorCount": 7,
+  "armFingerprint": "40a392946d709591e6ae1724f14afb4abd0f299826d0d42199e6d2804ddd4646",
+  "armConfig": {
+    "provider": "cerebras",
+    "baseUrl": "https://api.cerebras.ai/v1",
+    "model": "qwen-3.8-27b",
+    "mode": "json-object",
+    "constraintMode": "json-object",
+    "propContract": true,
+    "nodeShape": true,
+    "schemaDialect": "union-nullable",
+    "promptFile": "packages/genui/fixtures/live-prompts.json",
+    "promptSetHash": "f492473a94e49718cca442c12dbeaf956e02efb21eb1ba685c11932b13292595",
+    "requirementSetHash": "13842cf40cc01fbfb212e02f6c6d26121bc582df0f61ba81d3fe9e6127ce3ce3",
+    "scorerVersion": "requirements-2.0.0"
+  },
+  "armBatches": 1,
+  "results": [
+    {
+      "id": "L1",
+      "prompt": "Dashboard with 3 stat cards and an alert",
+      "compiled": false,
+      "firstPass": false,
+      "requirementsTotal": 3,
+      "requirementsPassed": 0,
+      "requirementRate": 0,
+      "requirementsMet": false,
+      "failedRequirementIds": [],
+      "failedRequirements": [],
+      "tree": null,
+      "componentF1": 0,
+      "propAccuracy": 0,
+      "rootPropAccuracy": 0,
+      "semanticallyWrong": false,
+      "errorCodes": [
+        "provider:200"
+      ],
+      "providerError": "provider returned an empty completion (model qwen-3.8-27b)",
+      "repairIterations": 0,
+      "healed": false,
+      "healKinds": {},
+      "tokens": 0,
+      "latencyMs": 4096,
+      "contractTextHash": "d925db81c42f81bda22d22b6c8565be045dd3c72f4400746146843839b560751"
+    },
+    {
+      "id": "L2",
+      "prompt": "Login form with email and password",
+      "compiled": true,
+      "firstPass": false,
+      "requirementsTotal": 5,
+      "requirementsPassed": 4,
+      "requirementRate": 0.8,
+      "requirementsMet": false,
+      "failedRequirementIds": [
+        "R5"
+      ],
+      "failedRequirements": [
+        "R5 hasText:submit (no prop value contains \"submit\")"
+      ],
+      "tree": {
+        "component": "Card",
+        "props": {
+          "padding": "md"
+        },
+        "children": [
+          {
+            "component": "Stack",
+            "props": {
+              "direction": "vertical",
+              "gap": "md"
+            },
+            "children": [
+              {
+                "component": "Text",
+                "props": {
+                  "content": "Log in",
+                  "size": "md",
+                  "weight": "normal"
+                }
+              },
+              {
+                "component": "Text",
+                "props": {
+                  "content": "Enter your email and password to continue",
+                  "size": "md",
+                  "weight": "normal"
+                }
+              },
+              {
+                "component": "Text",
+                "props": {
+                  "content": "Email",
+                  "size": "md",
+                  "weight": "normal"
+                }
+              },
+              {
+                "component": "Text",
+                "props": {
+                  "content": "you@example.com",
+                  "size": "md",
+                  "weight": "normal"
+                }
+              },
+              {
+                "component": "Text",
+                "props": {
+                  "content": "Password",
+                  "size": "md",
+                  "weight": "normal"
+                }
+              },
+              {
+                "component": "Text",
+                "props": {
+                  "content": "••••••••",
+                  "size": "md",
+                  "weight": "normal"
+                }
+              },
+              {
+                "component": "Button",
+                "props": {
+                  "label": "Log in",
+                  "variant": "primary"
+                }
+              },
+              {
+                "component": "Alert",
+                "props": {
+                  "message": "Please enter a valid email and password",
+                  "severity": "info"
+                }
+              },
+              {
+                "component": "Badge",
+                "props": {
+                  "label": "Secure login",
+                  "variant": "default"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "compileErrors": [],
+      "componentF1": 0.5333333333333333,
+      "propAccuracy": 0,
+      "rootPropAccuracy": 0,
+      "semanticallyWrong": true,
+      "errorCodes": [
+        "invalid_structure",
+        "missing_required_prop",
+        "invalid_structure"
+      ],
+      "repairIterations": 3,
+      "healed": false,
+      "healKinds": {},
+      "tokens": 12070,
+      "latencyMs": 7665,
+      "contractTextHash": "d925db81c42f81bda22d22b6c8565be045dd3c72f4400746146843839b560751"
+    },
+    {
+      "id": "L3",
+      "prompt": "Card list of 4 items",
+      "compiled": true,
+      "firstPass": false,
+      "requirementsTotal": 2,
+      "requirementsPassed": 2,
+      "requirementRate": 1,
+      "requirementsMet": true,
+      "failedRequirementIds": [],
+      "failedRequirements": [],
+      "tree": {
+        "component": "Stack",
+        "props": {
+          "direction": "vertical",
+          "gap": "md"
+        },
+        "children": [
+          {
+            "component": "Card",
+            "props": {
+              "padding": "md"
+            },
+            "children": [
+              {
+                "component": "Text",
+                "props": {
+                  "content": "Project Alpha",
+                  "size": "lg",
+                  "weight": "bold"
+                },
+                "id": "text-title-alpha"
+              },
+              {
+                "component": "Text",
+                "props": {
+                  "content": "Initial setup and baseline metrics.",
+                  "size": "md",
+                  "weight": "normal"
+                },
+                "id": "text-desc-alpha"
+              },
+              {
+                "component": "Badge",
+                "props": {
+                  "label": "Active",
+                  "variant": "success"
+                },
+                "id": "badge-alpha"
+              },
+              {
+                "component": "Button",
+                "props": {
+                  "label": "View",
+                  "variant": "primary",
+                  "onClick": "view-alpha"
+                },
+                "id": "button-alpha"
+              }
+            ],
+            "id": "card-alpha"
+          },
+          {
+            "component": "Card",
+            "props": {
+              "padding": "md"
+            },
+            "children": [
+              {
+                "component": "Text",
+                "props": {
+                  "content": "Project Beta",
+                  "size": "lg",
+                  "weight": "bold"
+                },
+                "id": "text-title-beta"
+              },
+              {
+                "component": "Text",
+                "props": {
+                  "content": "Design review and user feedback.",
+                  "size": "md",
+                  "weight": "normal"
+                },
+                "id": "text-desc-beta"
+              },
+              {
+                "component": "Badge",
+                "props": {
+                  "label": "Pending",
+                  "variant": "warning"
+                },
+                "id": "badge-beta"
+              },
+              {
+                "component": "Button",
+                "props": {
+                  "label": "Edit",
+                  "variant": "primary",
+                  "onClick": "edit-beta"
+                },
+                "id": "button-beta"
+              }
+            ],
+            "id": "card-beta"
+          },
+          {
+            "component": "Card",
+            "props": {
+              "padding": "md"
+            },
+            "children": [
+              {
+                "component": "Text",
+                "props": {
+                  "content": "Project Gamma",
+                  "size": "lg",
+                  "weight": "bold"
+                },
+                "id": "text-title-gamma"
+              },
+              {
+                "component": "Text",
+                "props": {
+                  "content": "Integration testing and bug fixes.",
+                  "size": "md",
+                  "weight": "normal"
+                },
+                "id": "text-desc-gamma"
+              },
+              {
+                "component": "Badge",
+                "props": {
+                  "label": "Review",
+                  "variant": "error"
+                },
+                "id": "badge-gamma"
+              },
+              {
+                "component": "Button",
+                "props": {
+                  "label": "View",
+                  "variant": "primary",
+                  "onClick": "view-gamma"
+                },
+                "id": "button-gamma"
+              }
+            ],
+            "id": "card-gamma"
+          },
+          {
+            "component": "Card",
+            "props": {
+              "padding": "md"
+            },
+            "children": [
+              {
+                "component": "Text",
+                "props": {
+                  "content": "Project Delta",
+                  "size": "lg",
+                  "weight": "bold"
+                },
+                "id": "text-title-delta"
+              },
+              {
+                "component": "Text",
+                "props": {
+                  "content": "Launch preparation and final QA.",
+                  "size": "md",
+                  "weight": "normal"
+                },
+                "id": "text-desc-delta"
+              },
+              {
+                "component": "Badge",
+                "props": {
+                  "label": "Ready",
+                  "variant": "success"
+                },
+                "id": "badge-delta"
+              },
+              {
+                "component": "Button",
+                "props": {
+                  "label": "View",
+                  "variant": "primary",
+                  "onClick": "view-delta"
+                },
+                "id": "button-delta"
+              }
+            ],
+            "id": "card-delta"
+          }
+        ],
+        "id": "stack-project-list"
+      },
+      "compileErrors": [],
+      "componentF1": 0.3846153846153846,
+      "propAccuracy": 0.3333333333333333,
+      "rootPropAccuracy": 1,
+      "semanticallyWrong": false,
+      "errorCodes": [
+        "invalid_structure"
+      ],
+      "repairIterations": 1,
+      "healed": false,
+      "healKinds": {},
+      "tokens": 6692,
+      "latencyMs": 5391,
+      "contractTextHash": "d925db81c42f81bda22d22b6c8565be045dd3c72f4400746146843839b560751"
+    },
+    {
+      "id": "L4",
+      "prompt": "Alert warning about low balance",
+      "compiled": false,
+      "firstPass": false,
+      "requirementsTotal": 3,
+      "requirementsPassed": 0,
+      "requirementRate": 0,
+      "requirementsMet": false,
+      "failedRequirementIds": [],
+      "failedRequirements": [],
+      "tree": null,
+      "componentF1": 0,
+      "propAccuracy": 0,
+      "rootPropAccuracy": 0,
+      "semanticallyWrong": false,
+      "errorCodes": [
+        "provider:200"
+      ],
+      "providerError": "provider returned an empty completion (model qwen-3.8-27b)",
+      "repairIterations": 0,
+      "healed": false,
+      "healKinds": {},
+      "tokens": 0,
+      "latencyMs": 2862,
+      "contractTextHash": "d925db81c42f81bda22d22b6c8565be045dd3c72f4400746146843839b560751"
+    },
+    {
+      "id": "L5",
+      "prompt": "Badge showing active status",
+      "compiled": true,
+      "firstPass": true,
+      "requirementsTotal": 2,
+      "requirementsPassed": 2,
+      "requirementRate": 1,
+      "requirementsMet": true,
+      "failedRequirementIds": [],
+      "failedRequirements": [],
+      "tree": {
+        "component": "Badge",
+        "props": {
+          "label": "Active",
+          "variant": "success"
+        },
+        "id": "badge-active"
+      },
+      "compileErrors": [],
+      "componentF1": 1,
+      "propAccuracy": 0.5,
+      "rootPropAccuracy": 0.5,
+      "semanticallyWrong": false,
+      "errorCodes": [],
+      "repairIterations": 1,
+      "healed": false,
+      "healKinds": {},
+      "tokens": 1680,
+      "latencyMs": 743,
+      "contractTextHash": "d925db81c42f81bda22d22b6c8565be045dd3c72f4400746146843839b560751"
+    },
+    {
+      "id": "L6",
+      "prompt": "Text heading for welcome page",
+      "compiled": true,
+      "firstPass": true,
+      "requirementsTotal": 2,
+      "requirementsPassed": 2,
+      "requirementRate": 1,
+      "requirementsMet": true,
+      "failedRequirementIds": [],
+      "failedRequirements": [],
+      "tree": {
+        "component": "Stack",
+        "props": {
+          "direction": "vertical",
+          "gap": "md"
+        },
+        "children": [
+          {
+            "component": "Text",
+            "props": {
+              "content": "Welcome to the App",
+              "size": "lg",
+              "weight": "bold"
+            },
+            "id": "welcome-heading"
+          }
+        ],
+        "id": "welcome-stack"
+      },
+      "compileErrors": [],
+      "componentF1": 0.6666666666666666,
+      "propAccuracy": 0,
+      "rootPropAccuracy": 0,
+      "semanticallyWrong": false,
+      "errorCodes": [],
+      "repairIterations": 1,
+      "healed": false,
+      "healKinds": {},
+      "tokens": 1879,
+      "latencyMs": 893,
+      "contractTextHash": "d925db81c42f81bda22d22b6c8565be045dd3c72f4400746146843839b560751"
+    },
+    {
+      "id": "L7",
+      "prompt": "Button for submit action",
+      "compiled": true,
+      "firstPass": true,
+      "requirementsTotal": 2,
+      "requirementsPassed": 2,
+      "requirementRate": 1,
+      "requirementsMet": true,
+      "failedRequirementIds": [],
+      "failedRequirements": [],
+      "tree": {
+        "component": "Stack",
+        "props": {
+          "direction": "vertical",
+          "gap": "md"
+        },
+        "children": [
+          {
+            "component": "Button",
+            "props": {
+              "label": "Submit",
+              "variant": "primary"
+            },
+            "id": "button-submit"
+          }
+        ],
+        "id": "stack-root"
+      },
+      "compileErrors": [],
+      "componentF1": 0.6666666666666666,
+      "propAccuracy": 0,
+      "rootPropAccuracy": 0,
+      "semanticallyWrong": false,
+      "errorCodes": [],
+      "repairIterations": 1,
+      "healed": false,
+      "healKinds": {},
+      "tokens": 1630,
+      "latencyMs": 639,
+      "contractTextHash": "d925db81c42f81bda22d22b6c8565be045dd3c72f4400746146843839b560751"
+    },
+    {
+      "id": "L8",
+      "prompt": "StatCard showing revenue 10000 trending up",
+      "compiled": true,
+      "firstPass": true,
+      "requirementsTotal": 4,
+      "requirementsPassed": 3,
+      "requirementRate": 0.75,
+      "requirementsMet": false,
+      "failedRequirementIds": [
+        "R1"
+      ],
+      "failedRequirements": [
+        "R1 hasText:10000 (no prop value contains \"10000\")"
+      ],
+      "tree": {
+        "component": "StatCard",
+        "props": {
+          "label": "Revenue",
+          "value": "10,000",
+          "trend": "up"
+        },
+        "id": "stat-card-revenue"
+      },
+      "compileErrors": [],
+      "componentF1": 1,
+      "propAccuracy": 0.6666666666666666,
+      "rootPropAccuracy": 0.6666666666666666,
+      "semanticallyWrong": true,
+      "errorCodes": [],
+      "repairIterations": 1,
+      "healed": false,
+      "healKinds": {},
+      "tokens": 1883,
+      "latencyMs": 1977,
+      "contractTextHash": "d925db81c42f81bda22d22b6c8565be045dd3c72f4400746146843839b560751"
+    },
+    {
+      "id": "L9",
+      "prompt": "Alert error about connection failure",
+      "compiled": false,
+      "firstPass": false,
+      "requirementsTotal": 3,
+      "requirementsPassed": 0,
+      "requirementRate": 0,
+      "requirementsMet": false,
+      "failedRequirementIds": [],
+      "failedRequirements": [],
+      "tree": null,
+      "componentF1": 0,
+      "propAccuracy": 0,
+      "rootPropAccuracy": 0,
+      "semanticallyWrong": false,
+      "errorCodes": [
+        "provider:200"
+      ],
+      "providerError": "provider returned an empty completion (model qwen-3.8-27b)",
+      "repairIterations": 0,
+      "healed": false,
+      "healKinds": {},
+      "tokens": 0,
+      "latencyMs": 2261,
+      "contractTextHash": "d925db81c42f81bda22d22b6c8565be045dd3c72f4400746146843839b560751"
+    },
+    {
+      "id": "L10",
+      "prompt": "Stack of two cards side by side",
+      "compiled": true,
+      "firstPass": false,
+      "requirementsTotal": 3,
+      "requirementsPassed": 3,
+      "requirementRate": 1,
+      "requirementsMet": true,
+      "failedRequirementIds": [],
+      "failedRequirements": [],
+      "tree": {
+        "component": "Stack",
+        "props": {
+          "direction": "horizontal",
+          "gap": "md"
+        },
+        "children": [
+          {
+            "component": "Card",
+            "props": {
+              "padding": "md"
+            },
+            "children": [
+              {
+                "component": "Text",
+                "props": {
+                  "content": "First Card Title",
+                  "size": "lg",
+                  "weight": "bold"
+                },
+                "id": "card1-title"
+              },
+              {
+                "component": "Text",
+                "props": {
+                  "content": "Supporting content for the first card.",
+                  "size": "md",
+                  "weight": "normal"
+                },
+                "id": "card1-description"
+              }
+            ],
+            "id": "card1"
+          },
+          {
+            "component": "Card",
+            "props": {
+              "padding": "md"
+            },
+            "children": [
+              {
+                "component": "Text",
+                "props": {
+                  "content": "Second Card Title",
+                  "size": "lg",
+                  "weight": "bold"
+                },
+                "id": "card2-title"
+              },
+              {
+                "component": "Text",
+                "props": {
+                  "content": "Supporting content for the second card.",
+                  "size": "md",
+                  "weight": "normal"
+                },
+                "id": "card2-description"
+              },
+              {
+                "component": "Button",
+                "props": {
+                  "label": "Primary Action",
+                  "variant": "primary"
+                },
+                "id": "card2-action"
+              }
+            ],
+            "id": "card2"
+          }
+        ],
+        "id": "main-stack"
+      },
+      "compileErrors": [],
+      "componentF1": 0.5454545454545454,
+      "propAccuracy": 0.5,
+      "rootPropAccuracy": 1,
+      "semanticallyWrong": false,
+      "errorCodes": [
+        "invalid_structure"
+      ],
+      "repairIterations": 1,
+      "healed": false,
+      "healKinds": {},
+      "tokens": 5923,
+      "latencyMs": 3634,
+      "contractTextHash": "d925db81c42f81bda22d22b6c8565be045dd3c72f4400746146843839b560751"
+    },
+    {
+      "id": "L11",
+      "prompt": "Card with nested text content",
+      "compiled": true,
+      "firstPass": true,
+      "requirementsTotal": 2,
+      "requirementsPassed": 2,
+      "requirementRate": 1,
+      "requirementsMet": true,
+      "failedRequirementIds": [],
+      "failedRequirements": [],
+      "tree": {
+        "component": "Card",
+        "props": {
+          "padding": "md"
+        },
+        "children": [
+          {
+            "component": "Stack",
+            "props": {
+              "direction": "vertical",
+              "gap": "md"
+            },
+            "children": [
+              {
+                "component": "Text",
+                "props": {
+                  "content": "Main Heading",
+                  "size": "lg",
+                  "weight": "bold"
+                },
+                "id": "text-heading"
+              },
+              {
+                "component": "Text",
+                "props": {
+                  "content": "Primary body content.",
+                  "size": "md",
+                  "weight": "normal"
+                },
+                "id": "text-body"
+              },
+              {
+                "component": "Text",
+                "props": {
+                  "content": "Supporting details or notes.",
+                  "size": "sm",
+                  "weight": "normal"
+                },
+                "id": "text-support"
+              }
+            ],
+            "id": "stack-content"
+          }
+        ],
+        "id": "card-main"
+      },
+      "compileErrors": [],
+      "componentF1": 0.5714285714285715,
+      "propAccuracy": 0,
+      "rootPropAccuracy": 0,
+      "semanticallyWrong": false,
+      "errorCodes": [],
+      "repairIterations": 1,
+      "healed": false,
+      "healKinds": {},
+      "tokens": 2236,
+      "latencyMs": 1374,
+      "contractTextHash": "d925db81c42f81bda22d22b6c8565be045dd3c72f4400746146843839b560751"
+    },
+    {
+      "id": "L12",
+      "prompt": "Alert success for payment complete",
+      "compiled": true,
+      "firstPass": true,
+      "requirementsTotal": 3,
+      "requirementsPassed": 3,
+      "requirementRate": 1,
+      "requirementsMet": true,
+      "failedRequirementIds": [],
+      "failedRequirements": [],
+      "tree": {
+        "component": "Card",
+        "props": {
+          "title": "Payment confirmation",
+          "padding": "md"
+        },
+        "children": [
+          {
+            "component": "Stack",
+            "props": {
+              "direction": "vertical",
+              "gap": "md"
+            },
+            "children": [
+              {
+                "component": "Alert",
+                "props": {
+                  "message": "Payment complete: Your payment was processed successfully.",
+                  "severity": "success"
+                },
+                "id": "alert-payment-complete"
+              },
+              {
+                "component": "Badge",
+                "props": {
+                  "label": "Paid",
+                  "variant": "success"
+                },
+                "id": "badge-paid"
+              },
+              {
+                "component": "Text",
+                "props": {
+                  "content": "Transaction ID: 123456789\nDate: June 10, 2026",
+                  "size": "md",
+                  "weight": "normal"
+                },
+                "id": "text-transaction"
+              },
+              {
+                "component": "Button",
+                "props": {
+                  "label": "View receipt",
+                  "variant": "primary"
+                },
+                "id": "button-view-receipt"
+              }
+            ],
+            "id": "stack-payment"
+          }
+        ],
+        "id": "card-payment"
+      },
+      "compileErrors": [],
+      "componentF1": 0.2857142857142857,
+      "propAccuracy": 0,
+      "rootPropAccuracy": 0,
+      "semanticallyWrong": false,
+      "errorCodes": [],
+      "repairIterations": 1,
+      "healed": false,
+      "healKinds": {},
+      "tokens": 3280,
+      "latencyMs": 2050,
+      "contractTextHash": "d925db81c42f81bda22d22b6c8565be045dd3c72f4400746146843839b560751"
+    },
+    {
+      "id": "L13",
+      "prompt": "Text paragraph for description",
+      "compiled": true,
+      "firstPass": true,
+      "requirementsTotal": 2,
+      "requirementsPassed": 2,
+      "requirementRate": 1,
+      "requirementsMet": true,
+      "failedRequirementIds": [],
+      "failedRequirements": [],
+      "tree": {
+        "component": "Card",
+        "props": {
+          "padding": "md"
+        },
+        "children": [
+          {
+            "component": "Stack",
+            "props": {
+              "direction": "vertical",
+              "gap": "md"
+            },
+            "children": [
+              {
+                "component": "Text",
+                "props": {
+                  "content": "Provide a clear, concise description of the item, feature, or page. This text should explain its purpose, key details, and any important context for the user.",
+                  "size": "md",
+                  "weight": "normal"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "card-description"
+      },
+      "compileErrors": [],
+      "componentF1": 0.5,
+      "propAccuracy": 0,
+      "rootPropAccuracy": 0,
+      "semanticallyWrong": false,
+      "errorCodes": [],
+      "repairIterations": 1,
+      "healed": false,
+      "healKinds": {},
+      "tokens": 1788,
+      "latencyMs": 1511,
+      "contractTextHash": "d925db81c42f81bda22d22b6c8565be045dd3c72f4400746146843839b560751"
+    },
+    {
+      "id": "L14",
+      "prompt": "Badge for pending status",
+      "compiled": true,
+      "firstPass": true,
+      "requirementsTotal": 2,
+      "requirementsPassed": 2,
+      "requirementRate": 1,
+      "requirementsMet": true,
+      "failedRequirementIds": [],
+      "failedRequirements": [],
+      "tree": {
+        "component": "Stack",
+        "props": {
+          "direction": "vertical",
+          "gap": "sm"
+        },
+        "children": [
+          {
+            "component": "Badge",
+            "props": {
+              "label": "Pending",
+              "variant": "warning"
+            },
+            "id": "pending-badge"
+          }
+        ],
+        "id": "status-stack"
+      },
+      "compileErrors": [],
+      "componentF1": 0.6666666666666666,
+      "propAccuracy": 0,
+      "rootPropAccuracy": 0,
+      "semanticallyWrong": false,
+      "errorCodes": [],
+      "repairIterations": 1,
+      "healed": false,
+      "healKinds": {},
+      "tokens": 1606,
+      "latencyMs": 741,
+      "contractTextHash": "d925db81c42f81bda22d22b6c8565be045dd3c72f4400746146843839b560751"
+    },
+    {
+      "id": "L15",
+      "prompt": "Card with stat and button",
+      "compiled": true,
+      "firstPass": true,
+      "requirementsTotal": 3,
+      "requirementsPassed": 3,
+      "requirementRate": 1,
+      "requirementsMet": true,
+      "failedRequirementIds": [],
+      "failedRequirements": [],
+      "tree": {
+        "component": "Card",
+        "props": {
+          "title": "Key Statistic",
+          "padding": "md"
+        },
+        "children": [
+          {
+            "component": "Stack",
+            "props": {
+              "direction": "vertical",
+              "gap": "md"
+            },
+            "children": [
+              {
+                "component": "StatCard",
+                "props": {
+                  "label": "Active Users",
+                  "value": "1,248",
+                  "trend": "up"
+                },
+                "id": "stat-card"
+              },
+              {
+                "component": "Badge",
+                "props": {
+                  "label": "+12%",
+                  "variant": "success"
+                },
+                "id": "badge"
+              },
+              {
+                "component": "Button",
+                "props": {
+                  "label": "View Details",
+                  "variant": "primary",
+                  "onClick": "viewDetails"
+                },
+                "id": "button"
+              }
+            ],
+            "id": "stack"
+          }
+        ],
+        "id": "card"
+      },
+      "compileErrors": [],
+      "componentF1": 0.7499999999999999,
+      "propAccuracy": 0,
+      "rootPropAccuracy": 0,
+      "semanticallyWrong": false,
+      "errorCodes": [],
+      "repairIterations": 1,
+      "healed": false,
+      "healKinds": {},
+      "tokens": 2562,
+      "latencyMs": 2151,
+      "contractTextHash": "d925db81c42f81bda22d22b6c8565be045dd3c72f4400746146843839b560751"
+    },
+    {
+      "id": "L16",
+      "prompt": "Button for cancel action",
+      "compiled": true,
+      "firstPass": true,
+      "requirementsTotal": 2,
+      "requirementsPassed": 2,
+      "requirementRate": 1,
+      "requirementsMet": true,
+      "failedRequirementIds": [],
+      "failedRequirements": [],
+      "tree": {
+        "component": "Stack",
+        "props": {
+          "direction": "horizontal",
+          "gap": "sm"
+        },
+        "children": [
+          {
+            "component": "Button",
+            "props": {
+              "label": "Cancel",
+              "variant": "secondary",
+              "onClick": "cancel"
+            },
+            "id": "cancel-button"
+          }
+        ],
+        "id": "cancel-stack"
+      },
+      "compileErrors": [],
+      "componentF1": 0.6666666666666666,
+      "propAccuracy": 0,
+      "rootPropAccuracy": 0,
+      "semanticallyWrong": false,
+      "errorCodes": [],
+      "repairIterations": 1,
+      "healed": false,
+      "healKinds": {},
+      "tokens": 2597,
+      "latencyMs": 1319,
+      "contractTextHash": "d925db81c42f81bda22d22b6c8565be045dd3c72f4400746146843839b560751"
+    },
+    {
+      "id": "L17",
+      "prompt": "Stack of stats vertical",
+      "compiled": false,
+      "firstPass": false,
+      "requirementsTotal": 3,
+      "requirementsPassed": 0,
+      "requirementRate": 0,
+      "requirementsMet": false,
+      "failedRequirementIds": [],
+      "failedRequirements": [],
+      "tree": null,
+      "componentF1": 0,
+      "propAccuracy": 0,
+      "rootPropAccuracy": 0,
+      "semanticallyWrong": false,
+      "errorCodes": [
+        "provider:200"
+      ],
+      "providerError": "provider returned an empty completion (model qwen-3.8-27b)",
+      "repairIterations": 0,
+      "healed": false,
+      "healKinds": {},
+      "tokens": 0,
+      "latencyMs": 2646,
+      "contractTextHash": "d925db81c42f81bda22d22b6c8565be045dd3c72f4400746146843839b560751"
+    },
+    {
+      "id": "L18",
+      "prompt": "Alert info about system update",
+      "compiled": true,
+      "firstPass": true,
+      "requirementsTotal": 3,
+      "requirementsPassed": 3,
+      "requirementRate": 1,
+      "requirementsMet": true,
+      "failedRequirementIds": [],
+      "failedRequirements": [],
+      "tree": {
+        "component": "Card",
+        "props": {
+          "title": "System Update",
+          "padding": "md"
+        },
+        "children": [
+          {
+            "component": "Stack",
+            "props": {
+              "direction": "vertical",
+              "gap": "md"
+            },
+            "children": [
+              {
+                "component": "Alert",
+                "props": {
+                  "message": "System Update Available: A new system update is ready to install. Please review the details before proceeding.",
+                  "severity": "info"
+                },
+                "id": "alert-update"
+              },
+              {
+                "component": "Badge",
+                "props": {
+                  "label": "Pending",
+                  "variant": "default"
+                },
+                "id": "badge-pending"
+              },
+              {
+                "component": "Text",
+                "props": {
+                  "content": "This update includes performance improvements and security fixes. The system may require a brief restart after installation.",
+                  "size": "md",
+                  "weight": "normal"
+                },
+                "id": "text-details"
+              },
+              {
+                "component": "Text",
+                "props": {
+                  "content": "Current version: 2.4.1 | Available version: 2.5.0",
+                  "size": "sm",
+                  "weight": "normal"
+                },
+                "id": "text-version"
+              },
+              {
+                "component": "Button",
+                "props": {
+                  "label": "View Update Details",
+                  "variant": "primary",
+                  "onClick": "viewUpdateDetails"
+                },
+                "id": "button-primary"
+              },
+              {
+                "component": "Button",
+                "props": {
+                  "label": "Remind Me Later",
+                  "variant": "secondary",
+                  "onClick": "remindMeLater"
+                },
+                "id": "button-secondary"
+              }
+            ],
+            "id": "stack-main"
+          }
+        ],
+        "id": "card-root"
+      },
+      "compileErrors": [],
+      "componentF1": 0.2222222222222222,
+      "propAccuracy": 0,
+      "rootPropAccuracy": 0,
+      "semanticallyWrong": false,
+      "errorCodes": [],
+      "repairIterations": 1,
+      "healed": false,
+      "healKinds": {},
+      "tokens": 3272,
+      "latencyMs": 1333,
+      "contractTextHash": "d925db81c42f81bda22d22b6c8565be045dd3c72f4400746146843839b560751"
+    },
+    {
+      "id": "L19",
+      "prompt": "Badge for error status",
+      "compiled": true,
+      "firstPass": true,
+      "requirementsTotal": 3,
+      "requirementsPassed": 3,
+      "requirementRate": 1,
+      "requirementsMet": true,
+      "failedRequirementIds": [],
+      "failedRequirements": [],
+      "tree": {
+        "component": "Card",
+        "props": {
+          "padding": "md"
+        },
+        "children": [
+          {
+            "component": "Stack",
+            "props": {
+              "direction": "vertical",
+              "gap": "sm"
+            },
+            "children": [
+              {
+                "component": "Text",
+                "props": {
+                  "content": "Status",
+                  "size": "md",
+                  "weight": "bold"
+                },
+                "id": "text-status"
+              },
+              {
+                "component": "Badge",
+                "props": {
+                  "label": "Error",
+                  "variant": "error"
+                },
+                "id": "badge-error"
+              }
+            ],
+            "id": "stack-status"
+          }
+        ],
+        "id": "card-root"
+      },
+      "compileErrors": [],
+      "componentF1": 0.4,
+      "propAccuracy": 0,
+      "rootPropAccuracy": 0,
+      "semanticallyWrong": false,
+      "errorCodes": [],
+      "repairIterations": 1,
+      "healed": false,
+      "healKinds": {},
+      "tokens": 2299,
+      "latencyMs": 1038,
+      "contractTextHash": "d925db81c42f81bda22d22b6c8565be045dd3c72f4400746146843839b560751"
+    },
+    {
+      "id": "L20",
+      "prompt": "Badge for success status",
+      "compiled": true,
+      "firstPass": true,
+      "requirementsTotal": 3,
+      "requirementsPassed": 3,
+      "requirementRate": 1,
+      "requirementsMet": true,
+      "failedRequirementIds": [],
+      "failedRequirements": [],
+      "tree": {
+        "component": "Stack",
+        "props": {
+          "direction": "vertical",
+          "gap": "sm"
+        },
+        "children": [
+          {
+            "component": "Badge",
+            "props": {
+              "label": "Success",
+              "variant": "success"
+            },
+            "id": "badge-1"
+          }
+        ],
+        "id": "stack-1"
+      },
+      "compileErrors": [],
+      "componentF1": 0.6666666666666666,
+      "propAccuracy": 0,
+      "rootPropAccuracy": 0,
+      "semanticallyWrong": false,
+      "errorCodes": [],
+      "repairIterations": 1,
+      "healed": false,
+      "healKinds": {},
+      "tokens": 1706,
+      "latencyMs": 700,
+      "contractTextHash": "d925db81c42f81bda22d22b6c8565be045dd3c72f4400746146843839b560751"
+    },
+    {
+      "id": "L21",
+      "prompt": "StatCard showing active users 742 trending down",
+      "compiled": false,
+      "firstPass": false,
+      "requirementsTotal": 4,
+      "requirementsPassed": 0,
+      "requirementRate": 0,
+      "requirementsMet": false,
+      "failedRequirementIds": [],
+      "failedRequirements": [],
+      "tree": null,
+      "componentF1": 0,
+      "propAccuracy": 0,
+      "rootPropAccuracy": 0,
+      "semanticallyWrong": false,
+      "errorCodes": [
+        "provider:200"
+      ],
+      "providerError": "provider returned an empty completion (model qwen-3.8-27b)",
+      "repairIterations": 0,
+      "healed": false,
+      "healKinds": {},
+      "tokens": 0,
+      "latencyMs": 2056,
+      "contractTextHash": "d925db81c42f81bda22d22b6c8565be045dd3c72f4400746146843839b560751"
+    },
+    {
+      "id": "L22",
+      "prompt": "Card containing alert",
+      "compiled": true,
+      "firstPass": true,
+      "requirementsTotal": 2,
+      "requirementsPassed": 2,
+      "requirementRate": 1,
+      "requirementsMet": true,
+      "failedRequirementIds": [],
+      "failedRequirements": [],
+      "tree": {
+        "component": "Card",
+        "props": {
+          "padding": "md"
+        },
+        "children": [
+          {
+            "component": "Stack",
+            "props": {
+              "direction": "vertical",
+              "gap": "md"
+            },
+            "children": [
+              {
+                "component": "Alert",
+                "props": {
+                  "message": "Something needs your attention.",
+                  "severity": "warning"
+                },
+                "id": "alert-1"
+              }
+            ],
+            "id": "stack-1"
+          }
+        ],
+        "id": "card-1"
+      },
+      "compileErrors": [],
+      "componentF1": 0.8,
+      "propAccuracy": 0,
+      "rootPropAccuracy": 0,
+      "semanticallyWrong": false,
+      "errorCodes": [],
+      "repairIterations": 1,
+      "healed": false,
+      "healKinds": {},
+      "tokens": 1763,
+      "latencyMs": 749,
+      "contractTextHash": "d925db81c42f81bda22d22b6c8565be045dd3c72f4400746146843839b560751"
+    },
+    {
+      "id": "L23",
+      "prompt": "Stack with card then button",
+      "compiled": true,
+      "firstPass": true,
+      "requirementsTotal": 2,
+      "requirementsPassed": 2,
+      "requirementRate": 1,
+      "requirementsMet": true,
+      "failedRequirementIds": [],
+      "failedRequirements": [],
+      "tree": {
+        "component": "Stack",
+        "props": {
+          "direction": "vertical",
+          "gap": "sm"
+        },
+        "children": [
+          {
+            "component": "Card",
+            "props": {
+              "title": "Details",
+              "padding": "md"
+            },
+            "children": [
+              {
+                "component": "Text",
+                "props": {
+                  "content": "Summary",
+                  "size": "md",
+                  "weight": "normal"
+                },
+                "id": "text-1"
+              }
+            ],
+            "id": "card-1"
+          },
+          {
+            "component": "Button",
+            "props": {
+              "label": "Continue",
+              "variant": "primary"
+            },
+            "id": "button-1"
+          }
+        ],
+        "id": "stack-1"
+      },
+      "compileErrors": [],
+      "componentF1": 0.8571428571428571,
+      "propAccuracy": 0.6,
+      "rootPropAccuracy": 0.5,
+      "semanticallyWrong": false,
+      "errorCodes": [],
+      "repairIterations": 1,
+      "healed": false,
+      "healKinds": {},
+      "tokens": 2143,
+      "latencyMs": 1176,
+      "contractTextHash": "d925db81c42f81bda22d22b6c8565be045dd3c72f4400746146843839b560751"
+    },
+    {
+      "id": "L24",
+      "prompt": "Text with bold weight",
+      "compiled": true,
+      "firstPass": true,
+      "requirementsTotal": 2,
+      "requirementsPassed": 2,
+      "requirementRate": 1,
+      "requirementsMet": true,
+      "failedRequirementIds": [],
+      "failedRequirements": [],
+      "tree": {
+        "component": "Card",
+        "props": {
+          "padding": "md"
+        },
+        "children": [
+          {
+            "component": "Stack",
+            "props": {
+              "direction": "vertical",
+              "gap": "sm"
+            },
+            "children": [
+              {
+                "component": "Text",
+                "props": {
+                  "content": "This text is bold.",
+                  "size": "md",
+                  "weight": "bold"
+                }
+              }
+            ],
+            "id": "stack-1"
+          }
+        ],
+        "id": "card-1"
+      },
+      "compileErrors": [],
+      "componentF1": 0.5,
+      "propAccuracy": 0,
+      "rootPropAccuracy": 0,
+      "semanticallyWrong": false,
+      "errorCodes": [],
+      "repairIterations": 1,
+      "healed": false,
+      "healKinds": {},
+      "tokens": 1689,
+      "latencyMs": 776,
+      "contractTextHash": "d925db81c42f81bda22d22b6c8565be045dd3c72f4400746146843839b560751"
+    },
+    {
+      "id": "L25",
+      "prompt": "Stack of three badges",
+      "compiled": true,
+      "firstPass": true,
+      "requirementsTotal": 2,
+      "requirementsPassed": 1,
+      "requirementRate": 0.5,
+      "requirementsMet": false,
+      "failedRequirementIds": [
+        "R1"
+      ],
+      "failedRequirements": [
+        "R1 hasText:three (no prop value contains \"three\")"
+      ],
+      "tree": {
+        "component": "Stack",
+        "props": {
+          "direction": "vertical",
+          "gap": "md"
+        },
+        "children": [
+          {
+            "component": "Badge",
+            "props": {
+              "label": "Badge 1",
+              "variant": "default"
+            },
+            "id": "badge-1"
+          },
+          {
+            "component": "Badge",
+            "props": {
+              "label": "Badge 2",
+              "variant": "default"
+            },
+            "id": "badge-2"
+          },
+          {
+            "component": "Badge",
+            "props": {
+              "label": "Badge 3",
+              "variant": "default"
+            },
+            "id": "badge-3"
+          }
+        ],
+        "id": "root-stack"
+      },
+      "compileErrors": [],
+      "componentF1": 1,
+      "propAccuracy": 0.375,
+      "rootPropAccuracy": 0,
+      "semanticallyWrong": true,
+      "errorCodes": [],
+      "repairIterations": 1,
+      "healed": false,
+      "healKinds": {},
+      "tokens": 1830,
+      "latencyMs": 797,
+      "contractTextHash": "d925db81c42f81bda22d22b6c8565be045dd3c72f4400746146843839b560751"
+    },
+    {
+      "id": "L26",
+      "prompt": "Card with two stat cards",
+      "compiled": true,
+      "firstPass": true,
+      "requirementsTotal": 2,
+      "requirementsPassed": 2,
+      "requirementRate": 1,
+      "requirementsMet": true,
+      "failedRequirementIds": [],
+      "failedRequirements": [],
+      "tree": {
+        "component": "Card",
+        "props": {
+          "title": "Metrics",
+          "padding": "md"
+        },
+        "children": [
+          {
+            "component": "Stack",
+            "props": {
+              "direction": "vertical",
+              "gap": "md"
+            },
+            "children": [
+              {
+                "component": "StatCard",
+                "props": {
+                  "label": "Primary Metric",
+                  "value": "42",
+                  "trend": "up"
+                },
+                "id": "stat-primary"
+              },
+              {
+                "component": "StatCard",
+                "props": {
+                  "label": "Secondary Metric",
+                  "value": "7",
+                  "trend": "neutral"
+                },
+                "id": "stat-secondary"
+              }
+            ],
+            "id": "stack-main"
+          }
+        ],
+        "id": "card-root"
+      },
+      "compileErrors": [],
+      "componentF1": 0.8571428571428571,
+      "propAccuracy": 0.14285714285714285,
+      "rootPropAccuracy": 1,
+      "semanticallyWrong": false,
+      "errorCodes": [],
+      "repairIterations": 1,
+      "healed": false,
+      "healKinds": {},
+      "tokens": 2055,
+      "latencyMs": 1084,
+      "contractTextHash": "d925db81c42f81bda22d22b6c8565be045dd3c72f4400746146843839b560751"
+    },
+    {
+      "id": "L27",
+      "prompt": "Settings page with save button",
+      "compiled": false,
+      "firstPass": false,
+      "requirementsTotal": 4,
+      "requirementsPassed": 0,
+      "requirementRate": 0,
+      "requirementsMet": false,
+      "failedRequirementIds": [],
+      "failedRequirements": [],
+      "tree": null,
+      "componentF1": 0,
+      "propAccuracy": 0,
+      "rootPropAccuracy": 0,
+      "semanticallyWrong": false,
+      "errorCodes": [
+        "provider:200"
+      ],
+      "providerError": "provider returned an empty completion (model qwen-3.8-27b)",
+      "repairIterations": 0,
+      "healed": false,
+      "healKinds": {},
+      "tokens": 0,
+      "latencyMs": 3094,
+      "contractTextHash": "d925db81c42f81bda22d22b6c8565be045dd3c72f4400746146843839b560751"
+    },
+    {
+      "id": "L28",
+      "prompt": "Empty state card",
+      "compiled": true,
+      "firstPass": true,
+      "requirementsTotal": 2,
+      "requirementsPassed": 2,
+      "requirementRate": 1,
+      "requirementsMet": true,
+      "failedRequirementIds": [],
+      "failedRequirements": [],
+      "tree": {
+        "component": "Card",
+        "props": {
+          "padding": "lg"
+        },
+        "children": [
+          {
+            "component": "Stack",
+            "props": {
+              "direction": "vertical",
+              "gap": "md"
+            },
+            "children": [
+              {
+                "component": "Badge",
+                "props": {
+                  "label": "Setup",
+                  "variant": "default"
+                },
+                "id": "empty-state-badge"
+              },
+              {
+                "component": "Text",
+                "props": {
+                  "content": "No items yet",
+                  "size": "lg",
+                  "weight": "bold"
+                },
+                "id": "empty-state-title"
+              },
+              {
+                "component": "Text",
+                "props": {
+                  "content": "When you add your first item, it will appear here.",
+                  "size": "md",
+                  "weight": "normal"
+                },
+                "id": "empty-state-description"
+              },
+              {
+                "component": "Button",
+                "props": {
+                  "label": "Add new item",
+                  "variant": "primary",
+                  "onClick": "addItem"
+                },
+                "id": "empty-state-action"
+              }
+            ],
+            "id": "empty-state-stack"
+          }
+        ],
+        "id": "empty-state-card"
+      },
+      "compileErrors": [],
+      "componentF1": 0.5,
+      "propAccuracy": 0,
+      "rootPropAccuracy": 0,
+      "semanticallyWrong": false,
+      "errorCodes": [],
+      "repairIterations": 1,
+      "healed": false,
+      "healKinds": {},
+      "tokens": 3038,
+      "latencyMs": 1657,
+      "contractTextHash": "d925db81c42f81bda22d22b6c8565be045dd3c72f4400746146843839b560751"
+    },
+    {
+      "id": "L29",
+      "prompt": "Horizontal stack of stats and alert",
+      "compiled": false,
+      "firstPass": false,
+      "requirementsTotal": 3,
+      "requirementsPassed": 0,
+      "requirementRate": 0,
+      "requirementsMet": false,
+      "failedRequirementIds": [],
+      "failedRequirements": [],
+      "tree": null,
+      "componentF1": 0,
+      "propAccuracy": 0,
+      "rootPropAccuracy": 0,
+      "semanticallyWrong": false,
+      "errorCodes": [
+        "provider:200"
+      ],
+      "providerError": "provider returned an empty completion (model qwen-3.8-27b)",
+      "repairIterations": 0,
+      "healed": false,
+      "healKinds": {},
+      "tokens": 0,
+      "latencyMs": 4813,
+      "contractTextHash": "d925db81c42f81bda22d22b6c8565be045dd3c72f4400746146843839b560751"
+    },
+    {
+      "id": "L30",
+      "prompt": "Profile card with badge",
+      "compiled": true,
+      "firstPass": true,
+      "requirementsTotal": 3,
+      "requirementsPassed": 3,
+      "requirementRate": 1,
+      "requirementsMet": true,
+      "failedRequirementIds": [],
+      "failedRequirements": [],
+      "tree": {
+        "component": "Card",
+        "props": {
+          "padding": "md"
+        },
+        "children": [
+          {
+            "component": "Stack",
+            "props": {
+              "direction": "vertical",
+              "gap": "md"
+            },
+            "children": [
+              {
+                "component": "Text",
+                "props": {
+                  "content": "Alex Morgan",
+                  "size": "lg",
+                  "weight": "bold"
+                },
+                "id": "name-text"
+              },
+              {
+                "component": "Text",
+                "props": {
+                  "content": "Product Designer",
+                  "size": "md",
+                  "weight": "normal"
+                },
+                "id": "role-text"
+              },
+              {
+                "component": "Badge",
+                "props": {
+                  "label": "Available",
+                  "variant": "success"
+                },
+                "id": "status-badge"
+              },
+              {
+                "component": "Stack",
+                "props": {
+                  "direction": "horizontal",
+                  "gap": "md"
+                },
+                "children": [
+                  {
+                    "component": "StatCard",
+                    "props": {
+                      "label": "Projects",
+                      "value": "24",
+                      "trend": "up"
+                    },
+                    "id": "projects-stat"
+                  },
+                  {
+                    "component": "StatCard",
+                    "props": {
+                      "label": "Followers",
+                      "value": "1,280",
+                      "trend": "neutral"
+                    },
+                    "id": "followers-stat"
+                  }
+                ],
+                "id": "stats-stack"
+              },
+              {
+                "component": "Button",
+                "props": {
+                  "label": "View Profile",
+                  "variant": "primary",
+                  "onClick": "viewProfile"
+                },
+                "id": "action-button"
+              }
+            ],
+            "id": "profile-stack"
+          }
+        ],
+        "id": "profile-card"
+      },
+      "compileErrors": [],
+      "componentF1": 0.3636363636363636,
+      "propAccuracy": 0,
+      "rootPropAccuracy": 0,
+      "semanticallyWrong": false,
+      "errorCodes": [],
+      "repairIterations": 1,
+      "healed": false,
+      "healKinds": {},
+      "tokens": 2787,
+      "latencyMs": 1288,
+      "contractTextHash": "d925db81c42f81bda22d22b6c8565be045dd3c72f4400746146843839b560751"
+    }
+  ]
+}

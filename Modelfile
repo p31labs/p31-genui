@@ -1,0 +1,8 @@
+# P31 GenUI — Ollama Modelfile (fallback for llama.cpp)
+# Use only if llama.cpp with SYCL/Vulkan is not available.
+# Expected performance: ~1.4 TPS on Intel Iris Xe (CPU fallback).
+
+FROM ./qwen3.5-4b-genui-q4_k_m.gguf
+PARAMETER temperature 0.1
+PARAMETER top_p 0.9
+PARAMETER num_ctx 8192

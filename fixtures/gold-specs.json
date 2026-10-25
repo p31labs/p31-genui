@@ -1,0 +1,592 @@
+[
+  {
+    "id": "P1",
+    "prompt": "Create a card showing LOVE balance 42 with an up trend.",
+    "goldTree": {
+      "component": "Card",
+      "props": {
+        "title": "LOVE Balance"
+      },
+      "children": [
+        {
+          "component": "StatCard",
+          "props": {
+            "label": "Balance",
+            "value": "42",
+            "trend": "up"
+          },
+          "children": []
+        }
+      ]
+    },
+    "requirements": [
+      {
+        "id": "R1",
+        "assert": "hasComponent:CARD"
+      },
+      {
+        "id": "R2",
+        "assert": "hasComponent:STATCARD"
+      },
+      {
+        "id": "R3",
+        "assert": "hasProp:STATCARD:value=42"
+      }
+    ]
+  },
+  {
+    "id": "P2",
+    "prompt": "Login form with email and password",
+    "goldTree": {
+      "component": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        {
+          "component": "Text",
+          "props": {
+            "content": "Email",
+            "size": "sm",
+            "weight": "bold"
+          },
+          "children": []
+        },
+        {
+          "component": "Text",
+          "props": {
+            "content": "Password",
+            "size": "sm",
+            "weight": "bold"
+          },
+          "children": []
+        },
+        {
+          "component": "Button",
+          "props": {
+            "label": "Submit",
+            "variant": "primary"
+          },
+          "children": []
+        }
+      ]
+    },
+    "requirements": [
+      {
+        "id": "R1",
+        "assert": "hasComponent:STACK"
+      },
+      {
+        "id": "R2",
+        "assert": "hasComponent:BUTTON"
+      },
+      {
+        "id": "R3",
+        "assert": "hasComponent:TEXT"
+      }
+    ]
+  },
+  {
+    "id": "P3",
+    "prompt": "Card list of 4 items",
+    "goldTree": {
+      "component": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        {
+          "component": "Card",
+          "props": {
+            "title": "Item 1"
+          },
+          "children": []
+        },
+        {
+          "component": "Card",
+          "props": {
+            "title": "Item 2"
+          },
+          "children": []
+        },
+        {
+          "component": "Card",
+          "props": {
+            "title": "Item 3"
+          },
+          "children": []
+        },
+        {
+          "component": "Card",
+          "props": {
+            "title": "Item 4"
+          },
+          "children": []
+        }
+      ]
+    },
+    "requirements": [
+      {
+        "id": "R1",
+        "assert": "hasComponent:STACK"
+      },
+      {
+        "id": "R2",
+        "assert": "hasComponent:CARD"
+      }
+    ]
+  },
+  {
+    "id": "P4",
+    "prompt": "Alert warning about low balance",
+    "goldTree": {
+      "component": "Alert",
+      "props": {
+        "message": "Low balance warning",
+        "severity": "warning"
+      },
+      "children": []
+    },
+    "requirements": [
+      {
+        "id": "R1",
+        "assert": "hasComponent:ALERT"
+      },
+      {
+        "id": "R2",
+        "assert": "hasProp:ALERT:severity=warning"
+      }
+    ]
+  },
+  {
+    "id": "P5",
+    "prompt": "Badge showing active status",
+    "goldTree": {
+      "component": "Badge",
+      "props": {
+        "label": "Active",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "requirements": [
+      {
+        "id": "R1",
+        "assert": "hasComponent:BADGE"
+      }
+    ]
+  },
+  {
+    "id": "P6",
+    "prompt": "Dashboard with 3 stat cards",
+    "goldTree": {
+      "component": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        {
+          "component": "StatCard",
+          "props": {
+            "label": "Users",
+            "value": "100",
+            "trend": "up"
+          },
+          "children": []
+        },
+        {
+          "component": "StatCard",
+          "props": {
+            "label": "Revenue",
+            "value": "5000",
+            "trend": "up"
+          },
+          "children": []
+        },
+        {
+          "component": "StatCard",
+          "props": {
+            "label": "Orders",
+            "value": "250",
+            "trend": "neutral"
+          },
+          "children": []
+        }
+      ]
+    },
+    "requirements": [
+      {
+        "id": "R1",
+        "assert": "hasComponent:STACK"
+      },
+      {
+        "id": "R2",
+        "assert": "hasComponent:STATCARD"
+      }
+    ]
+  },
+  {
+    "id": "P7",
+    "prompt": "Alert error about connection failure",
+    "goldTree": {
+      "component": "Alert",
+      "props": {
+        "message": "Connection failed",
+        "severity": "error"
+      },
+      "children": []
+    },
+    "requirements": [
+      {
+        "id": "R1",
+        "assert": "hasComponent:ALERT"
+      },
+      {
+        "id": "R2",
+        "assert": "hasProp:ALERT:severity=error"
+      }
+    ]
+  },
+  {
+    "id": "P8",
+    "prompt": "Text heading for welcome page",
+    "goldTree": {
+      "component": "Text",
+      "props": {
+        "content": "Welcome",
+        "size": "lg",
+        "weight": "bold"
+      },
+      "children": []
+    },
+    "requirements": [
+      {
+        "id": "R1",
+        "assert": "hasComponent:TEXT"
+      },
+      {
+        "id": "R2",
+        "assert": "hasProp:TEXT:size=lg"
+      }
+    ]
+  },
+  {
+    "id": "P9",
+    "prompt": "Button for submit action",
+    "goldTree": {
+      "component": "Button",
+      "props": {
+        "label": "Submit",
+        "variant": "primary"
+      },
+      "children": []
+    },
+    "requirements": [
+      {
+        "id": "R1",
+        "assert": "hasComponent:BUTTON"
+      },
+      {
+        "id": "R2",
+        "assert": "hasProp:BUTTON:label=Submit"
+      }
+    ]
+  },
+  {
+    "id": "P10",
+    "prompt": "Stack of two cards side by side",
+    "goldTree": {
+      "component": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        {
+          "component": "Card",
+          "props": {
+            "title": "Left"
+          },
+          "children": []
+        },
+        {
+          "component": "Card",
+          "props": {
+            "title": "Right"
+          },
+          "children": []
+        }
+      ]
+    },
+    "requirements": [
+      {
+        "id": "R1",
+        "assert": "hasComponent:STACK"
+      },
+      {
+        "id": "R2",
+        "assert": "hasComponent:CARD"
+      }
+    ]
+  },
+  {
+    "id": "P11",
+    "prompt": "StatCard showing revenue 10000 trending up",
+    "goldTree": {
+      "component": "StatCard",
+      "props": {
+        "label": "Revenue",
+        "value": "10000",
+        "trend": "up"
+      },
+      "children": []
+    },
+    "requirements": [
+      {
+        "id": "R1",
+        "assert": "hasComponent:STATCARD"
+      },
+      {
+        "id": "R2",
+        "assert": "hasProp:STATCARD:value=10000"
+      }
+    ]
+  },
+  {
+    "id": "P12",
+    "prompt": "Badge for inactive status",
+    "goldTree": {
+      "component": "Badge",
+      "props": {
+        "label": "Inactive",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "requirements": [
+      {
+        "id": "R1",
+        "assert": "hasComponent:BADGE"
+      }
+    ]
+  },
+  {
+    "id": "P13",
+    "prompt": "Alert info about system update",
+    "goldTree": {
+      "component": "Alert",
+      "props": {
+        "message": "System updated",
+        "severity": "info"
+      },
+      "children": []
+    },
+    "requirements": [
+      {
+        "id": "R1",
+        "assert": "hasComponent:ALERT"
+      },
+      {
+        "id": "R2",
+        "assert": "hasProp:ALERT:severity=info"
+      }
+    ]
+  },
+  {
+    "id": "P14",
+    "prompt": "Card with nested text content",
+    "goldTree": {
+      "component": "Card",
+      "props": {
+        "title": "Details"
+      },
+      "children": [
+        {
+          "component": "Text",
+          "props": {
+            "content": "Some details here",
+            "size": "md"
+          },
+          "children": []
+        }
+      ]
+    },
+    "requirements": [
+      {
+        "id": "R1",
+        "assert": "hasComponent:CARD"
+      },
+      {
+        "id": "R2",
+        "assert": "hasComponent:TEXT"
+      }
+    ]
+  },
+  {
+    "id": "P15",
+    "prompt": "Button for cancel action",
+    "goldTree": {
+      "component": "Button",
+      "props": {
+        "label": "Cancel",
+        "variant": "secondary"
+      },
+      "children": []
+    },
+    "requirements": [
+      {
+        "id": "R1",
+        "assert": "hasComponent:BUTTON"
+      },
+      {
+        "id": "R2",
+        "assert": "hasProp:BUTTON:label=Cancel"
+      }
+    ]
+  },
+  {
+    "id": "P16",
+    "prompt": "Stack of stats vertical",
+    "goldTree": {
+      "component": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        {
+          "component": "StatCard",
+          "props": {
+            "label": "A",
+            "value": "1",
+            "trend": "up"
+          },
+          "children": []
+        },
+        {
+          "component": "StatCard",
+          "props": {
+            "label": "B",
+            "value": "2",
+            "trend": "down"
+          },
+          "children": []
+        }
+      ]
+    },
+    "requirements": [
+      {
+        "id": "R1",
+        "assert": "hasComponent:STACK"
+      },
+      {
+        "id": "R2",
+        "assert": "hasComponent:STATCARD"
+      }
+    ]
+  },
+  {
+    "id": "P17",
+    "prompt": "Alert success for payment complete",
+    "goldTree": {
+      "component": "Alert",
+      "props": {
+        "message": "Payment complete",
+        "severity": "success"
+      },
+      "children": []
+    },
+    "requirements": [
+      {
+        "id": "R1",
+        "assert": "hasComponent:ALERT"
+      },
+      {
+        "id": "R2",
+        "assert": "hasProp:ALERT:severity=success"
+      }
+    ]
+  },
+  {
+    "id": "P18",
+    "prompt": "Text paragraph for description",
+    "goldTree": {
+      "component": "Text",
+      "props": {
+        "content": "This is a description",
+        "size": "md"
+      },
+      "children": []
+    },
+    "requirements": [
+      {
+        "id": "R1",
+        "assert": "hasComponent:TEXT"
+      }
+    ]
+  },
+  {
+    "id": "P19",
+    "prompt": "Badge for pending status",
+    "goldTree": {
+      "component": "Badge",
+      "props": {
+        "label": "Pending",
+        "variant": "warning"
+      },
+      "children": []
+    },
+    "requirements": [
+      {
+        "id": "R1",
+        "assert": "hasComponent:BADGE"
+      }
+    ]
+  },
+  {
+    "id": "P20",
+    "prompt": "Card with stat and button",
+    "goldTree": {
+      "component": "Card",
+      "props": {
+        "title": "Summary"
+      },
+      "children": [
+        {
+          "component": "StatCard",
+          "props": {
+            "label": "Total",
+            "value": "99",
+            "trend": "neutral"
+          },
+          "children": []
+        },
+        {
+          "component": "Button",
+          "props": {
+            "label": "View Details",
+            "variant": "primary"
+          },
+          "children": []
+        }
+      ]
+    },
+    "requirements": [
+      {
+        "id": "R1",
+        "assert": "hasComponent:CARD"
+      },
+      {
+        "id": "R2",
+        "assert": "hasComponent:STATCARD"
+      },
+      {
+        "id": "R3",
+        "assert": "hasComponent:BUTTON"
+      }
+    ]
+  }
+]

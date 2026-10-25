@@ -1,0 +1,56 @@
+[
+  {
+    "id": "E1-love-balance",
+    "initialTree": { "component": "Card", "props": { "title": "LOVE Balance" }, "children": [ { "component": "StatCard", "props": { "label": "Balance", "value": "42", "trend": "up" }, "children": [] } ] },
+    "turns": [
+      { "prompt": "Add a submit button below the stat.", "expectedPatch": { "op": "add", "path": "/children/1", "value": { "component": "Button", "props": { "label": "Submit", "variant": "primary" }, "children": [] } }, "goldTree": { "component": "Card", "props": { "title": "LOVE Balance" }, "children": [ { "component": "StatCard", "props": { "label": "Balance", "value": "42", "trend": "up" }, "children": [] }, { "component": "Button", "props": { "label": "Submit", "variant": "primary" }, "children": [] } ] }, "requirements": [ { "id": "R1", "assert": "hasComponent:CARD" }, { "id": "R2", "assert": "hasComponent:STATCARD" }, { "id": "R3", "assert": "hasProp:STATCARD:value=42" }, { "id": "R4", "assert": "hasComponent:BUTTON" } ] },
+      { "prompt": "Change the button label to Claim.", "expectedPatch": { "op": "modify", "path": "/children/1/props/label", "value": "Claim" }, "goldTree": { "component": "Card", "props": { "title": "LOVE Balance" }, "children": [ { "component": "StatCard", "props": { "label": "Balance", "value": "42", "trend": "up" }, "children": [] }, { "component": "Button", "props": { "label": "Claim", "variant": "primary" }, "children": [] } ] }, "requirements": [ { "id": "R5", "assert": "hasProp:BUTTON:label=Claim" } ] },
+      { "prompt": "Add a success badge.", "expectedPatch": { "op": "add", "path": "/children/2", "value": { "component": "Badge", "props": { "label": "OK", "variant": "success" }, "children": [] } }, "goldTree": { "component": "Card", "props": { "title": "LOVE Balance" }, "children": [ { "component": "StatCard", "props": { "label": "Balance", "value": "42", "trend": "up" }, "children": [] }, { "component": "Button", "props": { "label": "Claim", "variant": "primary" }, "children": [] }, { "component": "Badge", "props": { "label": "OK", "variant": "success" }, "children": [] } ] }, "requirements": [ { "id": "R6", "assert": "hasComponent:BADGE" } ] }
+    ]
+  },
+  {
+    "id": "E2-alerts",
+    "initialTree": { "component": "Stack", "props": { "direction": "vertical" }, "children": [ { "component": "Alert", "props": { "message": "Welcome", "severity": "info" }, "children": [] } ] },
+    "turns": [
+      { "prompt": "Add a warning alert below.", "expectedPatch": { "op": "add", "path": "/children/1", "value": { "component": "Alert", "props": { "message": "Check this", "severity": "warning" }, "children": [] } }, "goldTree": { "component": "Stack", "props": { "direction": "vertical" }, "children": [ { "component": "Alert", "props": { "message": "Welcome", "severity": "info" }, "children": [] }, { "component": "Alert", "props": { "message": "Check this", "severity": "warning" }, "children": [] } ] }, "requirements": [ { "id": "R1", "assert": "hasComponent:STACK" }, { "id": "R2", "assert": "hasComponents:ALERT>=2" } ] },
+      { "prompt": "Change the first alert message to Updated.", "expectedPatch": { "op": "modify", "path": "/children/0/props/message", "value": "Updated" }, "goldTree": { "component": "Stack", "props": { "direction": "vertical" }, "children": [ { "component": "Alert", "props": { "message": "Updated", "severity": "info" }, "children": [] }, { "component": "Alert", "props": { "message": "Check this", "severity": "warning" }, "children": [] } ] }, "requirements": [ { "id": "R3", "assert": "hasProp:ALERT:message~Updated" } ] },
+      { "prompt": "Change the second alert severity to error.", "expectedPatch": { "op": "modify", "path": "/children/1/props/severity", "value": "error" }, "goldTree": { "component": "Stack", "props": { "direction": "vertical" }, "children": [ { "component": "Alert", "props": { "message": "Updated", "severity": "info" }, "children": [] }, { "component": "Alert", "props": { "message": "Check this", "severity": "error" }, "children": [] } ] }, "requirements": [ { "id": "R4", "assert": "hasProp:ALERT:severity=error" } ] }
+    ]
+  },
+  {
+    "id": "E3-remove-footer",
+    "initialTree": { "component": "Card", "props": { "title": "Dashboard" }, "children": [ { "component": "StatCard", "props": { "label": "Views", "value": "10" }, "children": [] }, { "component": "Text", "props": { "content": "footer v1" }, "children": [] } ] },
+    "turns": [
+      { "prompt": "Remove the footer text.", "expectedPatch": { "op": "remove", "path": "/children/1" }, "goldTree": { "component": "Card", "props": { "title": "Dashboard" }, "children": [ { "component": "StatCard", "props": { "label": "Views", "value": "10" }, "children": [] } ] }, "requirements": [ { "id": "R1", "assert": "hasComponent:CARD" }, { "id": "R2", "assert": "hasComponent:STATCARD" } ] },
+      { "prompt": "Update stat value to 20.", "expectedPatch": { "op": "modify", "path": "/children/0/props/value", "value": "20" }, "goldTree": { "component": "Card", "props": { "title": "Dashboard" }, "children": [ { "component": "StatCard", "props": { "label": "Views", "value": "20" }, "children": [] } ] }, "requirements": [ { "id": "R3", "assert": "hasProp:STATCARD:value=20" } ] },
+      { "prompt": "Add a done badge.", "expectedPatch": { "op": "add", "path": "/children/1", "value": { "component": "Badge", "props": { "label": "Done", "variant": "success" }, "children": [] } }, "goldTree": { "component": "Card", "props": { "title": "Dashboard" }, "children": [ { "component": "StatCard", "props": { "label": "Views", "value": "20" }, "children": [] }, { "component": "Badge", "props": { "label": "Done", "variant": "success" }, "children": [] } ] }, "requirements": [ { "id": "R4", "assert": "hasComponent:BADGE" } ] }
+    ]
+  },
+  {
+    "id": "E4-buttons",
+    "initialTree": { "component": "Stack", "props": { "direction": "horizontal" }, "children": [ { "component": "Button", "props": { "label": "Cancel", "variant": "secondary" }, "children": [] } ] },
+    "turns": [
+      { "prompt": "Add a primary submit button before cancel.", "expectedPatch": { "op": "add", "path": "/children/0", "value": { "component": "Button", "props": { "label": "Submit", "variant": "primary" }, "children": [] } }, "goldTree": { "component": "Stack", "props": { "direction": "horizontal" }, "children": [ { "component": "Button", "props": { "label": "Submit", "variant": "primary" }, "children": [] }, { "component": "Button", "props": { "label": "Cancel", "variant": "secondary" }, "children": [] } ] }, "requirements": [ { "id": "R1", "assert": "hasComponent:STACK" }, { "id": "R2", "assert": "hasComponents:BUTTON>=2" } ] },
+      { "prompt": "Change cancel to ghost.", "expectedPatch": { "op": "modify", "path": "/children/1/props/variant", "value": "ghost" }, "goldTree": { "component": "Stack", "props": { "direction": "horizontal" }, "children": [ { "component": "Button", "props": { "label": "Submit", "variant": "primary" }, "children": [] }, { "component": "Button", "props": { "label": "Cancel", "variant": "ghost" }, "children": [] } ] }, "requirements": [ { "id": "R3", "assert": "hasProp:BUTTON:variant=ghost" } ] },
+      { "prompt": "Add a text label or continue.", "expectedPatch": { "op": "add", "path": "/children/2", "value": { "component": "Text", "props": { "content": "or continue" }, "children": [] } }, "goldTree": { "component": "Stack", "props": { "direction": "horizontal" }, "children": [ { "component": "Button", "props": { "label": "Submit", "variant": "primary" }, "children": [] }, { "component": "Button", "props": { "label": "Cancel", "variant": "ghost" }, "children": [] }, { "component": "Text", "props": { "content": "or continue" }, "children": [] } ] }, "requirements": [ { "id": "R4", "assert": "hasComponent:TEXT" } ] }
+    ]
+  },
+  {
+    "id": "E5-stats",
+    "initialTree": { "component": "Card", "props": { "title": "Stats" }, "children": [ { "component": "StatCard", "props": { "label": "Views", "value": "0" }, "children": [] } ] },
+    "turns": [
+      { "prompt": "Set value to 100.", "expectedPatch": { "op": "modify", "path": "/children/0/props/value", "value": "100" }, "goldTree": { "component": "Card", "props": { "title": "Stats" }, "children": [ { "component": "StatCard", "props": { "label": "Views", "value": "100" }, "children": [] } ] }, "requirements": [ { "id": "R1", "assert": "hasComponent:CARD" }, { "id": "R2", "assert": "hasProp:STATCARD:value=100" } ] },
+      { "prompt": "Add trend up.", "expectedPatch": { "op": "add", "path": "/children/0/props/trend", "value": "up" }, "goldTree": { "component": "Card", "props": { "title": "Stats" }, "children": [ { "component": "StatCard", "props": { "label": "Views", "value": "100", "trend": "up" }, "children": [] } ] }, "requirements": [ { "id": "R3", "assert": "hasProp:STATCARD:trend=up" } ] },
+      { "prompt": "Add a hot badge.", "expectedPatch": { "op": "add", "path": "/children/1", "value": { "component": "Badge", "props": { "label": "Hot", "variant": "warning" }, "children": [] } }, "goldTree": { "component": "Card", "props": { "title": "Stats" }, "children": [ { "component": "StatCard", "props": { "label": "Views", "value": "100", "trend": "up" }, "children": [] }, { "component": "Badge", "props": { "label": "Hot", "variant": "warning" }, "children": [] } ] }, "requirements": [ { "id": "R4", "assert": "hasComponent:BADGE" } ] }
+    ]
+  },
+  {
+    "id": "E6-alert-remove",
+    "initialTree": { "component": "Stack", "props": { "direction": "vertical" }, "children": [ { "component": "Alert", "props": { "message": "System OK", "severity": "success" }, "children": [] } ] },
+    "turns": [
+      { "prompt": "Add details text.", "expectedPatch": { "op": "add", "path": "/children/1", "value": { "component": "Text", "props": { "content": "Details" }, "children": [] } }, "goldTree": { "component": "Stack", "props": { "direction": "vertical" }, "children": [ { "component": "Alert", "props": { "message": "System OK", "severity": "success" }, "children": [] }, { "component": "Text", "props": { "content": "Details" }, "children": [] } ] }, "requirements": [ { "id": "R1", "assert": "hasComponent:STACK" }, { "id": "R2", "assert": "hasComponent:ALERT" } ] },
+      { "prompt": "Change alert severity to warning.", "expectedPatch": { "op": "modify", "path": "/children/0/props/severity", "value": "warning" }, "goldTree": { "component": "Stack", "props": { "direction": "vertical" }, "children": [ { "component": "Alert", "props": { "message": "System OK", "severity": "warning" }, "children": [] }, { "component": "Text", "props": { "content": "Details" }, "children": [] } ] }, "requirements": [ { "id": "R3", "assert": "hasProp:ALERT:severity=warning" } ] },
+      { "prompt": "Remove details text.", "expectedPatch": { "op": "remove", "path": "/children/1" }, "goldTree": { "component": "Stack", "props": { "direction": "vertical" }, "children": [ { "component": "Alert", "props": { "message": "System OK", "severity": "warning" }, "children": [] } ] }, "requirements": [] }
+    ]
+  }
+]

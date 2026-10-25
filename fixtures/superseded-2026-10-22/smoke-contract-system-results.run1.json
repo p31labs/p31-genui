@@ -1,0 +1,418 @@
+{
+  "mode": "json-object",
+  "model": "poolside/laguna-s-2.1:free",
+  "provider": "kilo",
+  "providerLabel": "Kilo",
+  "routed": false,
+  "baseUrl": "https://api.kilo.ai/api/gateway/v1",
+  "keySource": "file:/home/p31/.local/share/opencode/auth.json#kilo.key",
+  "servedModels": {
+    "poolside/laguna-s-2.1:free": 5
+  },
+  "constraintMode": "json-object",
+  "schemaDialect": "union-nullable",
+  "propContract": true,
+  "nodeShape": true,
+  "contractRole": "system",
+  "promptCount": 6,
+  "firstPassRate": 0,
+  "compilePassRate": 0.5,
+  "endToEndSuccessRate": 0.16666666666666666,
+  "endToEndReached": 6,
+  "endToEndSucceeded": 1,
+  "requirementPassRate": 0.3333333333333333,
+  "avgRequirementRate": 0.8055555555555555,
+  "avgRequirementsFailed": 0.6666666666666666,
+  "requirementsPerSpec": 0,
+  "avgComponentF1": 1,
+  "avgPropAccuracy": 0.2222222222222222,
+  "avgRootPropAccuracy": 0.1111111111111111,
+  "wrongValidSchemaRate": 0.6666666666666666,
+  "healedRate": 0.5,
+  "healKinds": {
+    "fence": 3
+  },
+  "healKindsRate": {
+    "fence": 0.5
+  },
+  "avgRepairIterations": 3,
+  "repairsPerAcceptedSpec": 2,
+  "avgTokens": 1730.1666666666667,
+  "tokensPerAcceptedSpec": 996,
+  "avgLatencyMs": 19166.5,
+  "totalTokens": 10381,
+  "callCount": 24,
+  "rateLimitHits": 0,
+  "providerErrorCount": 0,
+  "armFingerprint": "14f9e7108df74110068dd143b1dbe42528c8b0ea2a1623cdfba9200cfbf39ce3",
+  "armConfig": {
+    "provider": "kilo",
+    "baseUrl": "https://api.kilo.ai/api/gateway/v1",
+    "model": "poolside/laguna-s-2.1:free",
+    "mode": "json-object",
+    "constraintMode": "json-object",
+    "propContract": true,
+    "nodeShape": true,
+    "schemaDialect": "union-nullable",
+    "contractRole": "system",
+    "promptFile": "packages/genui/fixtures/live-prompts.json",
+    "promptSetHash": "e7b0a4034560027706486b70592d1549178e1b11c18bf9b23b0c6491921d1761",
+    "requirementSetHash": "bee9737064c587eed8bcb182b7079c1ad5f7cc79729b30e3c23f122dedf6e7d3",
+    "scorerVersion": "requirements-2.0.0"
+  },
+  "armBatches": 7,
+  "results": [
+    {
+      "id": "L4",
+      "prompt": "Alert warning about low balance",
+      "compiled": false,
+      "firstPass": false,
+      "requirementsTotal": 3,
+      "requirementsPassed": 0,
+      "requirementRate": 0,
+      "requirementsMet": false,
+      "failedRequirementIds": [],
+      "failedRequirements": [],
+      "tree": {
+        "root": {
+          "component": "Alert",
+          "props": {
+            "type": "warning"
+          },
+          "children": [
+            {
+              "component": "Text",
+              "props": {
+                "content": "Warning: Your account balance is low."
+              }
+            }
+          ]
+        }
+      },
+      "compileErrors": [
+        {
+          "code": "invalid_structure",
+          "path": "root.component",
+          "message": "component must be a string",
+          "expected": "string"
+        }
+      ],
+      "componentF1": 0,
+      "propAccuracy": 0,
+      "rootPropAccuracy": 0,
+      "semanticallyWrong": false,
+      "errorCodes": [
+        "missing_required_prop",
+        "slot_mismatch",
+        "invalid_structure"
+      ],
+      "repairIterations": 4,
+      "healed": true,
+      "healKinds": {
+        "fence": 1
+      },
+      "tokens": 1664,
+      "latencyMs": 19142
+    },
+    {
+      "id": "L8",
+      "prompt": "StatCard showing revenue 10000 trending up",
+      "compiled": true,
+      "firstPass": false,
+      "requirementsTotal": 4,
+      "requirementsPassed": 3,
+      "requirementRate": 0.75,
+      "requirementsMet": false,
+      "failedRequirementIds": [
+        "R3"
+      ],
+      "failedRequirements": [
+        "R3 hasProp:StatCard:trend=up (no StatCard with trend = up)"
+      ],
+      "tree": {
+        "component": "StatCard",
+        "props": {
+          "label": "Revenue",
+          "value": "$10,000"
+        }
+      },
+      "compileErrors": [],
+      "componentF1": 1,
+      "propAccuracy": 0.3333333333333333,
+      "rootPropAccuracy": 0.3333333333333333,
+      "semanticallyWrong": true,
+      "errorCodes": [
+        "missing_required_prop",
+        "missing_required_prop"
+      ],
+      "repairIterations": 2,
+      "healed": false,
+      "healKinds": {},
+      "tokens": 770,
+      "latencyMs": 9701
+    },
+    {
+      "id": "L9",
+      "prompt": "Alert error about connection failure",
+      "compiled": true,
+      "firstPass": false,
+      "requirementsTotal": 3,
+      "requirementsPassed": 2,
+      "requirementRate": 0.6666666666666666,
+      "requirementsMet": false,
+      "failedRequirementIds": [
+        "R2"
+      ],
+      "failedRequirements": [
+        "R2 hasProp:Alert:severity=error (no Alert with severity = error)"
+      ],
+      "tree": {
+        "component": "Alert",
+        "props": {
+          "message": "Connection failed. Please check your network settings and try again.",
+          "severity": "info"
+        }
+      },
+      "compileErrors": [],
+      "componentF1": 1,
+      "propAccuracy": 0,
+      "rootPropAccuracy": 0,
+      "semanticallyWrong": true,
+      "errorCodes": [
+        "missing_required_prop"
+      ],
+      "repairIterations": 2,
+      "healed": false,
+      "healKinds": {},
+      "tokens": 1043,
+      "latencyMs": 9980
+    },
+    {
+      "id": "L12",
+      "prompt": "Alert success for payment complete",
+      "compiled": false,
+      "firstPass": false,
+      "requirementsTotal": 3,
+      "requirementsPassed": 0,
+      "requirementRate": 0,
+      "requirementsMet": false,
+      "failedRequirementIds": [],
+      "failedRequirements": [],
+      "tree": {
+        "component": "Box",
+        "props": {
+          "direction": "column",
+          "padding": "medium"
+        },
+        "children": [
+          {
+            "component": "Alert",
+            "props": {
+              "style": "success"
+            },
+            "children": [
+              {
+                "component": "Text",
+                "props": {
+                  "content": "Payment completed successfully!"
+                }
+              }
+            ]
+          },
+          {
+            "component": "StatCard",
+            "props": {
+              "title": "Payment Details"
+            },
+            "children": [
+              {
+                "component": "Text",
+                "props": {
+                  "content": "Amount: $100.00"
+                }
+              },
+              {
+                "component": "Text",
+                "props": {
+                  "content": "Date: 2023-05-15"
+                }
+              }
+            ]
+          },
+          {
+            "component": "Button",
+            "props": {
+              "label": "View Receipt"
+            }
+          },
+          {
+            "component": "Card",
+            "props": {},
+            "children": [
+              {
+                "component": "Stack",
+                "props": {},
+                "children": [
+                  {
+                    "component": "Text",
+                    "props": {
+                      "content": "Need help?"
+                    }
+                  },
+                  {
+                    "component": "Text",
+                    "props": {
+                      "content": "Contact support@example.com"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "compileErrors": [
+        {
+          "code": "unknown_component",
+          "path": "root.component",
+          "message": "Unknown component: Box",
+          "expected": "Card | Stack | Button | Text | Badge | StatCard | Alert",
+          "received": "Box"
+        }
+      ],
+      "componentF1": 0,
+      "propAccuracy": 0,
+      "rootPropAccuracy": 0,
+      "semanticallyWrong": false,
+      "errorCodes": [
+        "missing_required_prop",
+        "slot_mismatch",
+        "invalid_structure",
+        "unknown_component",
+        "invalid_structure"
+      ],
+      "repairIterations": 4,
+      "healed": true,
+      "healKinds": {
+        "fence": 1
+      },
+      "tokens": 3288,
+      "latencyMs": 37902
+    },
+    {
+      "id": "L15",
+      "prompt": "Card with stat and button",
+      "compiled": true,
+      "firstPass": false,
+      "requirementsTotal": 3,
+      "requirementsPassed": 3,
+      "requirementRate": 1,
+      "requirementsMet": true,
+      "failedRequirementIds": [],
+      "failedRequirements": [],
+      "tree": {
+        "component": "Card",
+        "props": {
+          "padding": "md"
+        },
+        "children": [
+          {
+            "component": "StatCard",
+            "props": {
+              "label": "Total Users",
+              "value": "1,248"
+            }
+          },
+          {
+            "component": "Button",
+            "props": {
+              "label": "View Details",
+              "variant": "primary"
+            }
+          }
+        ]
+      },
+      "compileErrors": [],
+      "componentF1": 1,
+      "propAccuracy": 0.3333333333333333,
+      "rootPropAccuracy": 0,
+      "semanticallyWrong": false,
+      "errorCodes": [
+        "missing_required_prop",
+        "missing_required_prop",
+        "missing_required_prop"
+      ],
+      "repairIterations": 2,
+      "healed": false,
+      "healKinds": {},
+      "tokens": 1175,
+      "latencyMs": 11200
+    },
+    {
+      "id": "L35",
+      "prompt": "Success banner with checkmark badge",
+      "compiled": false,
+      "firstPass": false,
+      "requirementsTotal": 3,
+      "requirementsPassed": 0,
+      "requirementRate": 0,
+      "requirementsMet": false,
+      "failedRequirementIds": [],
+      "failedRequirements": [],
+      "tree": {
+        "root": {
+          "component": "Alert",
+          "props": {
+            "style": "success"
+          },
+          "children": [
+            {
+              "component": "Stack",
+              "props": {
+                "direction": "horizontal"
+              },
+              "children": [
+                {
+                  "component": "Badge",
+                  "props": {
+                    "content": "✓"
+                  }
+                },
+                {
+                  "component": "Text",
+                  "props": {
+                    "content": "Operation completed successfully"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "compileErrors": [
+        {
+          "code": "invalid_structure",
+          "path": "root.component",
+          "message": "component must be a string",
+          "expected": "string"
+        }
+      ],
+      "componentF1": 0,
+      "propAccuracy": 0,
+      "rootPropAccuracy": 0,
+      "semanticallyWrong": false,
+      "errorCodes": [
+        "missing_required_prop",
+        "slot_mismatch",
+        "invalid_structure"
+      ],
+      "repairIterations": 4,
+      "healed": true,
+      "healKinds": {
+        "fence": 1
+      },
+      "tokens": 2441,
+      "latencyMs": 27074
+    }
+  ]
+}

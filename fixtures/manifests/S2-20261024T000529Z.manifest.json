@@ -1,0 +1,67 @@
+{
+  "arm": "kilo/poolside/laguna-s-2.1:free/json-object/union-nullable",
+  "startedAt": "2026-10-24T00:05:29.000Z",
+  "finishedAt": "2026-10-24T00:06:05.912Z",
+  "durationMs": 36912,
+  "gitSha": "b6c12b4ce43fbfa843d9a54dcfba2722571e16d3",
+  "gitDirty": true,
+  "route": {
+    "provider": "kilo",
+    "baseUrl": "https://api.kilo.ai/api/gateway/v1",
+    "keySource": "env:KILO_API_KEY"
+  },
+  "model": {
+    "requested": "poolside/laguna-s-2.1:free",
+    "served": {
+      "poolside/laguna-s-2.1:free": 2
+    }
+  },
+  "mode": "json-object",
+  "constraintMode": "json-object",
+  "promptContract": {
+    "propContract": true,
+    "nodeShape": true,
+    "contractRole": "user"
+  },
+  "contractTextHash": "d925db81c42f81bda22d22b6c8565be045dd3c72f4400746146843839b560751",
+  "schemaDialect": "union-nullable",
+  "scorerVersion": "requirements-2.0.0",
+  "armFingerprint": "f1dd8b2f62f52c902fa402e59704ca8d88dc7c611c359bf7994821090dff3ded",
+  "artifacts": {
+    "promptFile": "packages/genui/fixtures/sealed-heldout-prompts.json",
+    "promptSetHash": "6f697c7b7c7c12c591047d6a71c063b98546dc312c42acecc610c8807086653d",
+    "requirementSetHash": "f93b93dbddbc8fc6beb5f812f52201b4c31edf8efd95f2be49bd99082f45f434"
+  },
+  "batch": {
+    "index": 28,
+    "resumed": true,
+    "promptsInThisBatch": 0,
+    "promptsInArm": 14,
+    "skippedAlreadyMeasured": 3,
+    "windowStartedAt": "2026-10-24T00:05:29.000Z",
+    "circuitBreakerOpen": false
+  },
+  "totals": {
+    "prompts": 14,
+    "compiled": 2,
+    "reachedTheModel": 3,
+    "modelCalls": 9,
+    "tokens": 5619,
+    "rateLimitHits": 25,
+    "providerErrors": 11
+  },
+  "metrics": {
+    "firstPassRate": 0.14285714285714285,
+    "compilePassRate": 0.14285714285714285,
+    "requirementPassRate": 0.5,
+    "avgRequirementRate": 0.625,
+    "wrongValidSchemaRate": 0.5,
+    "healedRate": 0.07142857142857142,
+    "healKinds": {
+      "trailingProse": 1
+    },
+    "avgRepairIterations": 0.42857142857142855,
+    "repairsPerAcceptedSpec": 1,
+    "tokensPerAcceptedSpec": 1279.5
+  }
+}

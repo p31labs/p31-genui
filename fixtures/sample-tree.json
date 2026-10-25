@@ -1,0 +1,47 @@
+{
+  "id": "root",
+  "component": "Stack",
+  "props": {
+    "direction": "vertical",
+    "gap": "md"
+  },
+  "children": [
+    {
+      "id": "heading-1",
+      "component": "Text",
+      "props": {
+        "content": "Dashboard",
+        "size": "xl",
+        "weight": "bold"
+      }
+    },
+    {
+      "id": "stat-row",
+      "component": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        {
+          "id": "stat-1",
+          "component": "StatCard",
+          "props": {
+            "label": "Revenue",
+            "value": "42,000",
+            "trend": "up"
+          }
+        },
+        {
+          "id": "stat-2",
+          "component": "StatCard",
+          "props": {
+            "label": "Customers",
+            "value": "1,200",
+            "trend": "up"
+          }
+        }
+      ]
+    }
+  ]
+}

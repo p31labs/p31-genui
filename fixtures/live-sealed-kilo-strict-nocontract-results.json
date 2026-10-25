@@ -1,0 +1,463 @@
+{
+  "mode": "strict",
+  "model": "poolside/laguna-s-2.1:free",
+  "provider": "kilo",
+  "providerLabel": "Kilo",
+  "routed": false,
+  "baseUrl": "https://api.kilo.ai/api/gateway/v1",
+  "keySource": "env:KILO_API_KEY",
+  "servedModels": {},
+  "constraintMode": "strict-schema",
+  "schemaDialect": "union-nullable",
+  "propContract": false,
+  "nodeShape": true,
+  "contractRole": "user",
+  "contractTextHash": "9883f134fc7432918cae0ed6e57ff0f70bbbe443ee42bdc40e1f445bd5bf4bdf",
+  "contractTextRows": {
+    "unknown": 13,
+    "9883f134fc7432918cae0ed6e57ff0f70bbbe443ee42bdc40e1f445bd5bf4bdf": 1
+  },
+  "promptCount": 14,
+  "firstPassRate": 0.21428571428571427,
+  "compilePassRate": 0.5,
+  "endToEndSuccessRate": 0.23076923076923078,
+  "endToEndReached": 13,
+  "endToEndSucceeded": 3,
+  "requirementPassRate": 0.42857142857142855,
+  "avgRequirementRate": 0.7984693877551019,
+  "avgRequirementsFailed": 1.4285714285714286,
+  "requirementsPerSpec": 8,
+  "avgComponentF1": 0.8134199134199135,
+  "avgPropAccuracy": 0.38698376786612076,
+  "avgRootPropAccuracy": 0.5714285714285714,
+  "wrongValidSchemaRate": 0.5714285714285714,
+  "healedRate": 0.5,
+  "healKinds": {
+    "fence": 9,
+    "trailingProse": 3
+  },
+  "healKindsRate": {
+    "fence": 0.6428571428571429,
+    "trailingProse": 0.21428571428571427
+  },
+  "avgRepairIterations": 2.5,
+  "repairsPerAcceptedSpec": 1.5714285714285714,
+  "avgTokens": 2228.1428571428573,
+  "tokensPerAcceptedSpec": 1427.4285714285713,
+  "avgLatencyMs": 30814.85714285714,
+  "totalTokens": 31194,
+  "callCount": 48,
+  "rateLimitHits": 0,
+  "providerErrorCount": 1,
+  "armFingerprint": "6703eca0e4d14c1e19e6663e6173e9b100d4f125bbabacd741983f62762c8d16",
+  "armConfig": {
+    "provider": "kilo",
+    "baseUrl": "https://api.kilo.ai/api/gateway/v1",
+    "model": "poolside/laguna-s-2.1:free",
+    "mode": "strict",
+    "constraintMode": "strict-schema",
+    "propContract": false,
+    "nodeShape": true,
+    "schemaDialect": "union-nullable",
+    "promptFile": "packages/genui/fixtures/sealed-heldout-prompts.json",
+    "promptSetHash": "6f697c7b7c7c12c591047d6a71c063b98546dc312c42acecc610c8807086653d",
+    "requirementSetHash": "f93b93dbddbc8fc6beb5f812f52201b4c31edf8efd95f2be49bd99082f45f434",
+    "scorerVersion": "requirements-2.0.0"
+  },
+  "armBatches": 41,
+  "results": [
+    {
+      "id": "S1",
+      "prompt": "Can you make a card titled \"Kitchen Renovation\" with a line of body text explaining what the estimate covers?",
+      "compiled": true,
+      "firstPass": true,
+      "requirementsTotal": 5,
+      "requirementsPassed": 5,
+      "requirementRate": 1,
+      "requirementsMet": true,
+      "failedRequirementIds": [],
+      "failedRequirements": [],
+      "componentF1": 0.6666666666666666,
+      "propAccuracy": 0.4,
+      "rootPropAccuracy": 1,
+      "semanticallyWrong": false,
+      "errorCodes": [],
+      "repairIterations": 1,
+      "healed": false,
+      "healKinds": {},
+      "tokens": 768,
+      "latencyMs": 11645
+    },
+    {
+      "id": "S2",
+      "prompt": "I'm putting together the weekly ops summary for the Rotterdam warehouse and need it today: two stat cards for active work orders and our OTIF rate, a badge flagging that 3 orders are overdue, an error alert because the packing line is down, and a button labeled 'Open work orders'.",
+      "compiled": true,
+      "firstPass": false,
+      "requirementsTotal": 8,
+      "requirementsPassed": 8,
+      "requirementRate": 1,
+      "requirementsMet": true,
+      "failedRequirementIds": [],
+      "failedRequirements": [],
+      "componentF1": 1,
+      "propAccuracy": 0.3333333333333333,
+      "rootPropAccuracy": 1,
+      "semanticallyWrong": false,
+      "errorCodes": [
+        "missing_required_prop",
+        "missing_required_prop"
+      ],
+      "repairIterations": 2,
+      "healed": true,
+      "healKinds": {
+        "fence": 1
+      },
+      "tokens": 1952,
+      "latencyMs": 23824
+    },
+    {
+      "id": "S3",
+      "prompt": "Build a card titled \"Delete workspace\" that warns people the deletion is permanent, then give me three buttons: Cancel, Delete, and Keep workspace.",
+      "compiled": true,
+      "firstPass": false,
+      "requirementsTotal": 7,
+      "requirementsPassed": 6,
+      "requirementRate": 0.8571428571428571,
+      "requirementsMet": false,
+      "failedRequirementIds": [
+        "R2"
+      ],
+      "failedRequirements": [
+        "R2 hasProp:Card:title~Delete workspace (no Card with title = Delete workspace)"
+      ],
+      "componentF1": 0.8,
+      "propAccuracy": 0.5384615384615384,
+      "rootPropAccuracy": 0.5,
+      "semanticallyWrong": true,
+      "errorCodes": [
+        "missing_required_prop",
+        "invalid_prop"
+      ],
+      "repairIterations": 2,
+      "healed": true,
+      "healKinds": {
+        "trailingProse": 1,
+        "fence": 1
+      },
+      "tokens": 1988,
+      "latencyMs": 24502
+    },
+    {
+      "id": "S4",
+      "prompt": "Can you show me the on-call roster for the week of March 3? I need Priya Raman, Tomas Ek, Ana Bermejo, and Joel Whitfield, one row per person showing their rotation day and pager number — a table would be ideal but a list of rows is fine.",
+      "compiled": true,
+      "firstPass": true,
+      "requirementsTotal": 7,
+      "requirementsPassed": 2,
+      "requirementRate": 0.2857142857142857,
+      "requirementsMet": false,
+      "failedRequirementIds": [
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6"
+      ],
+      "failedRequirements": [
+        "R2 hasComponents:Text>=4 (only 1 Text node(s), need 4)",
+        "R3 hasText:Priya Raman (no prop value contains \"Priya Raman\")",
+        "R4 hasText:Tomas Ek (no prop value contains \"Tomas Ek\")",
+        "R5 hasText:Ana Bermejo (no prop value contains \"Ana Bermejo\")",
+        "R6 hasText:Joel Whitfield (no prop value contains \"Joel Whitfield\")"
+      ],
+      "componentF1": 0.5,
+      "propAccuracy": 0.11764705882352941,
+      "rootPropAccuracy": 0.5,
+      "semanticallyWrong": true,
+      "errorCodes": [],
+      "repairIterations": 1,
+      "healed": false,
+      "healKinds": {},
+      "tokens": 1062,
+      "latencyMs": 12325
+    },
+    {
+      "id": "S5",
+      "prompt": "Our support board needs a ticket-volume chart for the last 7 days and a map showing where the outages are, but neither of those renders in this component set, so surface the numbers instead. Two stat cards for ticket volume and median first response time, a badge reading '12 open', and an error alert about the outages.",
+      "compiled": false,
+      "firstPass": false,
+      "requirementsTotal": 8,
+      "requirementsPassed": 0,
+      "requirementRate": 0,
+      "requirementsMet": false,
+      "failedRequirementIds": [],
+      "failedRequirements": [],
+      "componentF1": 0,
+      "propAccuracy": 0,
+      "rootPropAccuracy": 0,
+      "semanticallyWrong": false,
+      "errorCodes": [
+        "missing_required_prop",
+        "invalid_structure",
+        "invalid_structure"
+      ],
+      "repairIterations": 4,
+      "healed": false,
+      "healKinds": {},
+      "tokens": 3172,
+      "latencyMs": 35225
+    },
+    {
+      "id": "S6",
+      "prompt": "Just an error alert about the Stripe webhook failing, please.",
+      "compiled": false,
+      "firstPass": false,
+      "requirementsTotal": 3,
+      "requirementsPassed": 0,
+      "requirementRate": 0,
+      "requirementsMet": false,
+      "failedRequirementIds": [],
+      "failedRequirements": [],
+      "componentF1": 0,
+      "propAccuracy": 0,
+      "rootPropAccuracy": 0,
+      "semanticallyWrong": false,
+      "errorCodes": [
+        "missing_required_prop",
+        "slot_mismatch",
+        "invalid_structure"
+      ],
+      "repairIterations": 4,
+      "healed": false,
+      "healKinds": {},
+      "tokens": 2153,
+      "latencyMs": 82444
+    },
+    {
+      "id": "S7",
+      "prompt": "I need a pricing section with three cards — Starter, Pro, and Enterprise. Each card shows the plan name, a price, and a call-to-action button: 'Start free' on Starter and Pro, 'Contact sales' on Enterprise. Put a success badge reading 'Most popular' on the Pro card.",
+      "compiled": false,
+      "firstPass": false,
+      "requirementsTotal": 8,
+      "requirementsPassed": 0,
+      "requirementRate": 0,
+      "requirementsMet": false,
+      "failedRequirementIds": [],
+      "failedRequirements": [],
+      "componentF1": 0,
+      "propAccuracy": 0,
+      "rootPropAccuracy": 0,
+      "semanticallyWrong": false,
+      "errorCodes": [
+        "missing_required_prop",
+        "invalid_prop"
+      ],
+      "repairIterations": 4,
+      "healed": true,
+      "healKinds": {
+        "trailingProse": 1,
+        "fence": 3
+      },
+      "tokens": 4939,
+      "latencyMs": 58907
+    },
+    {
+      "id": "S8",
+      "prompt": "On the payouts page I need a card for logging a disbursement: a labelled field for the recipient's DID, a field for the amount in LOVE, a picker listing the networks Taler, x402, and LOVE, and a submit button labeled 'Send payout'.",
+      "compiled": false,
+      "firstPass": false,
+      "requirementsTotal": 8,
+      "requirementsPassed": 0,
+      "requirementRate": 0,
+      "requirementsMet": false,
+      "failedRequirementIds": [],
+      "failedRequirements": [],
+      "componentF1": 0,
+      "propAccuracy": 0,
+      "rootPropAccuracy": 0,
+      "semanticallyWrong": false,
+      "errorCodes": [
+        "missing_required_prop",
+        "slot_mismatch",
+        "invalid_structure",
+        "invalid_structure"
+      ],
+      "repairIterations": 4,
+      "healed": true,
+      "healKinds": {
+        "trailingProse": 1
+      },
+      "tokens": 3880,
+      "latencyMs": 46293
+    },
+    {
+      "id": "S9",
+      "prompt": "Build a toolbar with three buttons: a primary 'Save changes', a secondary 'Duplicate', and a ghost 'Discard'.",
+      "compiled": true,
+      "firstPass": true,
+      "requirementsTotal": 7,
+      "requirementsPassed": 7,
+      "requirementRate": 1,
+      "requirementsMet": true,
+      "failedRequirementIds": [],
+      "failedRequirements": [],
+      "componentF1": 1,
+      "propAccuracy": 0.875,
+      "rootPropAccuracy": 0.5,
+      "semanticallyWrong": false,
+      "errorCodes": [],
+      "repairIterations": 1,
+      "healed": false,
+      "healKinds": {},
+      "tokens": 813,
+      "latencyMs": 12378
+    },
+    {
+      "id": "S10",
+      "prompt": "It's October 21, 2026 and we just closed the Q3 round for Finch Labs, so I need a board update card: a headline stat of $4.2M raised this quarter, a second stat of 18 enterprise customers, a success badge that says 'Q3 closed', a short paragraph explaining that the round was led by Meridian Ventures with $1.5M from existing investors, and a primary button labeled 'Open the board deck'.",
+      "compiled": false,
+      "firstPass": false,
+      "requirementsTotal": 8,
+      "requirementsPassed": 0,
+      "requirementRate": 0,
+      "requirementsMet": false,
+      "failedRequirementIds": [],
+      "failedRequirements": [],
+      "componentF1": 0,
+      "propAccuracy": 0,
+      "rootPropAccuracy": 0,
+      "semanticallyWrong": false,
+      "errorCodes": [
+        "missing_required_prop",
+        "invalid_structure"
+      ],
+      "repairIterations": 4,
+      "healed": false,
+      "healKinds": {},
+      "tokens": 3504,
+      "latencyMs": 44786
+    },
+    {
+      "id": "S11",
+      "prompt": "The deployment banner needs a green chip that says 'Healthy', a yellow one for 'Degraded latency', and a red one for 'Failed rollout'.",
+      "compiled": true,
+      "firstPass": false,
+      "requirementsTotal": 7,
+      "requirementsPassed": 4,
+      "requirementRate": 0.5714285714285714,
+      "requirementsMet": false,
+      "failedRequirementIds": [
+        "R3",
+        "R4",
+        "R5"
+      ],
+      "failedRequirements": [
+        "R3 hasProp:Badge:variant=success (no Badge with variant = success)",
+        "R4 hasProp:Badge:variant=warning (no Badge with variant = warning)",
+        "R5 hasProp:Badge:variant=error (no Badge with variant = error)"
+      ],
+      "componentF1": 0.7272727272727273,
+      "propAccuracy": 0,
+      "rootPropAccuracy": 0,
+      "semanticallyWrong": true,
+      "errorCodes": [
+        "missing_required_prop",
+        "missing_required_prop",
+        "missing_required_prop",
+        "missing_required_prop"
+      ],
+      "repairIterations": 2,
+      "healed": true,
+      "healKinds": {
+        "fence": 1
+      },
+      "tokens": 1773,
+      "latencyMs": 16639
+    },
+    {
+      "id": "S12",
+      "prompt": "Lay the onboarding steps out in a vertical stack with large gaps between them: 1. Create your keypair, 2. Fund your wallet, 3. Publish your DID. Add a primary 'Get started' button at the bottom.",
+      "compiled": false,
+      "firstPass": false,
+      "requirementsTotal": 8,
+      "requirementsPassed": 0,
+      "requirementRate": 0,
+      "requirementsMet": false,
+      "failedRequirementIds": [],
+      "failedRequirements": [],
+      "componentF1": 0,
+      "propAccuracy": 0,
+      "rootPropAccuracy": 0,
+      "semanticallyWrong": false,
+      "errorCodes": [
+        "missing_required_prop",
+        "invalid_structure"
+      ],
+      "repairIterations": 4,
+      "healed": true,
+      "healKinds": {
+        "fence": 2
+      },
+      "tokens": 3554,
+      "latencyMs": 46575
+    },
+    {
+      "id": "S13",
+      "prompt": "Renewal season, so I want a card showing revenue this month with an upward trend, a warning that 4 contracts expire before the 30th, and a secondary button to 'Review renewals'.",
+      "compiled": true,
+      "firstPass": false,
+      "requirementsTotal": 8,
+      "requirementsPassed": 7,
+      "requirementRate": 0.875,
+      "requirementsMet": false,
+      "failedRequirementIds": [
+        "R5"
+      ],
+      "failedRequirements": [
+        "R5 hasProp:Alert:severity=warning (no Alert with severity = warning)"
+      ],
+      "componentF1": 1,
+      "propAccuracy": 0.4444444444444444,
+      "rootPropAccuracy": 0.5,
+      "semanticallyWrong": true,
+      "errorCodes": [
+        "missing_required_prop",
+        "missing_required_prop"
+      ],
+      "repairIterations": 2,
+      "healed": true,
+      "healKinds": {
+        "fence": 1
+      },
+      "tokens": 1636,
+      "latencyMs": 15458
+    },
+    {
+      "id": "S14",
+      "prompt": "This is the incident page for INC-4471 on the payments service. I need a card carrying the incident ID, a critical error alert saying the payout ledger is out of sync, three stat cards for p99 latency, error rate, and affected accounts, a badge for the current status, a stack of timestamps, and two buttons — a primary 'Acknowledge' and a ghost 'Escalate to on-call'.",
+      "compiled": false,
+      "firstPass": false,
+      "requirementsTotal": 8,
+      "requirementsPassed": 0,
+      "requirementRate": 0,
+      "requirementsMet": false,
+      "failedRequirementIds": [],
+      "failedRequirements": [],
+      "tree": null,
+      "componentF1": 0,
+      "propAccuracy": 0,
+      "rootPropAccuracy": 0,
+      "semanticallyWrong": false,
+      "errorCodes": [
+        "provider:401"
+      ],
+      "providerError": "provider HTTP 401: {\"error\":{\"code\":\"INVALID_TOKEN\",\"message\":\"Your authentication token is invalid. Please sign in again.\"},\"error_type\":\"authentication_required\"}",
+      "repairIterations": 0,
+      "healed": false,
+      "healKinds": {},
+      "tokens": 0,
+      "latencyMs": 407,
+      "contractTextHash": "9883f134fc7432918cae0ed6e57ff0f70bbbe443ee42bdc40e1f445bd5bf4bdf"
+    }
+  ]
+}

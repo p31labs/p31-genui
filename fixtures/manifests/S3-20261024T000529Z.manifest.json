@@ -1,0 +1,66 @@
+{
+  "arm": "kilo/poolside/laguna-s-2.1:free/json-object/union-nullable",
+  "startedAt": "2026-10-24T00:05:29.000Z",
+  "finishedAt": "2026-10-24T00:06:06.102Z",
+  "durationMs": 37102,
+  "gitSha": "b6c12b4ce43fbfa843d9a54dcfba2722571e16d3",
+  "gitDirty": true,
+  "route": {
+    "provider": "kilo",
+    "baseUrl": "https://api.kilo.ai/api/gateway/v1",
+    "keySource": "env:KILO_API_KEY"
+  },
+  "model": {
+    "requested": "poolside/laguna-s-2.1:free",
+    "served": {}
+  },
+  "mode": "json-object",
+  "constraintMode": "json-object",
+  "promptContract": {
+    "propContract": false,
+    "nodeShape": true,
+    "contractRole": "user"
+  },
+  "contractTextHash": "9883f134fc7432918cae0ed6e57ff0f70bbbe443ee42bdc40e1f445bd5bf4bdf",
+  "schemaDialect": "union-nullable",
+  "scorerVersion": "requirements-2.0.0",
+  "armFingerprint": "1a29b573583aa6e80a86b18495654d3bafd60ce83c94348d5bae406a45434f83",
+  "artifacts": {
+    "promptFile": "packages/genui/fixtures/sealed-heldout-prompts.json",
+    "promptSetHash": "6f697c7b7c7c12c591047d6a71c063b98546dc312c42acecc610c8807086653d",
+    "requirementSetHash": "f93b93dbddbc8fc6beb5f812f52201b4c31edf8efd95f2be49bd99082f45f434"
+  },
+  "batch": {
+    "index": 28,
+    "resumed": true,
+    "promptsInThisBatch": 0,
+    "promptsInArm": 14,
+    "skippedAlreadyMeasured": 14,
+    "windowStartedAt": "2026-10-24T00:05:29.000Z",
+    "circuitBreakerOpen": false
+  },
+  "totals": {
+    "prompts": 14,
+    "compiled": 7,
+    "reachedTheModel": 14,
+    "modelCalls": 50,
+    "tokens": 33512,
+    "rateLimitHits": 0,
+    "providerErrors": 0
+  },
+  "metrics": {
+    "firstPassRate": 0.42857142857142855,
+    "compilePassRate": 0.5,
+    "requirementPassRate": 0.42857142857142855,
+    "avgRequirementRate": 0.8375850340136053,
+    "wrongValidSchemaRate": 0.5714285714285714,
+    "healedRate": 0.5714285714285714,
+    "healKinds": {
+      "fence": 16,
+      "trailingProse": 1
+    },
+    "avgRepairIterations": 2.5714285714285716,
+    "repairsPerAcceptedSpec": 1.1428571428571428,
+    "tokensPerAcceptedSpec": 1035.857142857143
+  }
+}

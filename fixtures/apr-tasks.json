@@ -1,0 +1,873 @@
+[
+  {
+    "id": "APR-1",
+    "turns": [
+      {
+        "prompt": "Create a card showing LOVE balance 42 with an up trend.",
+        "goldTree": {
+          "component": "Card",
+          "props": {
+            "title": "LOVE Balance"
+          },
+          "children": [
+            {
+              "component": "StatCard",
+              "props": {
+                "label": "Balance",
+                "value": "42",
+                "trend": "up"
+              },
+              "children": []
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": "R1",
+            "assert": "hasComponent:CARD"
+          },
+          {
+            "id": "R2",
+            "assert": "hasComponent:STATCARD"
+          },
+          {
+            "id": "R3",
+            "assert": "hasProp:STATCARD:value=42"
+          }
+        ]
+      },
+      {
+        "prompt": "Add a submit button below the stat.",
+        "goldTree": {
+          "component": "Card",
+          "props": {
+            "title": "LOVE Balance"
+          },
+          "children": [
+            {
+              "component": "StatCard",
+              "props": {
+                "label": "Balance",
+                "value": "42",
+                "trend": "up"
+              },
+              "children": []
+            },
+            {
+              "component": "Button",
+              "props": {
+                "label": "Submit",
+                "variant": "primary"
+              },
+              "children": []
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": "R1",
+            "assert": "hasComponent:CARD"
+          },
+          {
+            "id": "R2",
+            "assert": "hasComponent:STATCARD"
+          },
+          {
+            "id": "R3",
+            "assert": "hasProp:STATCARD:value=42"
+          },
+          {
+            "id": "R4",
+            "assert": "hasComponent:BUTTON"
+          }
+        ]
+      },
+      {
+        "prompt": "Change the button label to Claim.",
+        "goldTree": {
+          "component": "Card",
+          "props": {
+            "title": "LOVE Balance"
+          },
+          "children": [
+            {
+              "component": "StatCard",
+              "props": {
+                "label": "Balance",
+                "value": "42",
+                "trend": "up"
+              },
+              "children": []
+            },
+            {
+              "component": "Button",
+              "props": {
+                "label": "Claim",
+                "variant": "primary"
+              },
+              "children": []
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": "R1",
+            "assert": "hasComponent:CARD"
+          },
+          {
+            "id": "R2",
+            "assert": "hasComponent:STATCARD"
+          },
+          {
+            "id": "R3",
+            "assert": "hasProp:STATCARD:value=42"
+          },
+          {
+            "id": "R4",
+            "assert": "hasComponent:BUTTON"
+          },
+          {
+            "id": "R5",
+            "assert": "hasProp:BUTTON:label=Claim"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "APR-2",
+    "turns": [
+      {
+        "prompt": "Login form with email and password",
+        "goldTree": {
+          "component": "Stack",
+          "props": {
+            "direction": "vertical",
+            "gap": "md"
+          },
+          "children": [
+            {
+              "component": "Text",
+              "props": {
+                "content": "Email",
+                "size": "sm",
+                "weight": "bold"
+              },
+              "children": []
+            },
+            {
+              "component": "Text",
+              "props": {
+                "content": "Password",
+                "size": "sm",
+                "weight": "bold"
+              },
+              "children": []
+            },
+            {
+              "component": "Button",
+              "props": {
+                "label": "Submit",
+                "variant": "primary"
+              },
+              "children": []
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": "R1",
+            "assert": "hasComponent:STACK"
+          },
+          {
+            "id": "R2",
+            "assert": "hasComponent:BUTTON"
+          },
+          {
+            "id": "R3",
+            "assert": "hasComponent:TEXT"
+          }
+        ]
+      },
+      {
+        "prompt": "Add an alert for invalid credentials.",
+        "goldTree": {
+          "component": "Stack",
+          "props": {
+            "direction": "vertical",
+            "gap": "md"
+          },
+          "children": [
+            {
+              "component": "Text",
+              "props": {
+                "content": "Email",
+                "size": "sm",
+                "weight": "bold"
+              },
+              "children": []
+            },
+            {
+              "component": "Text",
+              "props": {
+                "content": "Password",
+                "size": "sm",
+                "weight": "bold"
+              },
+              "children": []
+            },
+            {
+              "component": "Button",
+              "props": {
+                "label": "Submit",
+                "variant": "primary"
+              },
+              "children": []
+            },
+            {
+              "component": "Alert",
+              "props": {
+                "message": "Invalid credentials",
+                "severity": "error"
+              },
+              "children": []
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": "R1",
+            "assert": "hasComponent:STACK"
+          },
+          {
+            "id": "R2",
+            "assert": "hasComponent:BUTTON"
+          },
+          {
+            "id": "R3",
+            "assert": "hasComponent:TEXT"
+          },
+          {
+            "id": "R4",
+            "assert": "hasComponent:ALERT"
+          }
+        ]
+      },
+      {
+        "prompt": "Change alert to warning severity.",
+        "goldTree": {
+          "component": "Stack",
+          "props": {
+            "direction": "vertical",
+            "gap": "md"
+          },
+          "children": [
+            {
+              "component": "Text",
+              "props": {
+                "content": "Email",
+                "size": "sm",
+                "weight": "bold"
+              },
+              "children": []
+            },
+            {
+              "component": "Text",
+              "props": {
+                "content": "Password",
+                "size": "sm",
+                "weight": "bold"
+              },
+              "children": []
+            },
+            {
+              "component": "Button",
+              "props": {
+                "label": "Submit",
+                "variant": "primary"
+              },
+              "children": []
+            },
+            {
+              "component": "Alert",
+              "props": {
+                "message": "Invalid credentials",
+                "severity": "warning"
+              },
+              "children": []
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": "R1",
+            "assert": "hasComponent:STACK"
+          },
+          {
+            "id": "R2",
+            "assert": "hasComponent:BUTTON"
+          },
+          {
+            "id": "R3",
+            "assert": "hasComponent:TEXT"
+          },
+          {
+            "id": "R4",
+            "assert": "hasComponent:ALERT"
+          },
+          {
+            "id": "R5",
+            "assert": "hasProp:ALERT:severity=warning"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "APR-3",
+    "turns": [
+      {
+        "prompt": "Card list of 4 items",
+        "goldTree": {
+          "component": "Stack",
+          "props": {
+            "direction": "vertical",
+            "gap": "md"
+          },
+          "children": [
+            {
+              "component": "Card",
+              "props": {
+                "title": "Item 1"
+              },
+              "children": []
+            },
+            {
+              "component": "Card",
+              "props": {
+                "title": "Item 2"
+              },
+              "children": []
+            },
+            {
+              "component": "Card",
+              "props": {
+                "title": "Item 3"
+              },
+              "children": []
+            },
+            {
+              "component": "Card",
+              "props": {
+                "title": "Item 4"
+              },
+              "children": []
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": "R1",
+            "assert": "hasComponent:STACK"
+          },
+          {
+            "id": "R2",
+            "assert": "hasComponent:CARD"
+          }
+        ]
+      },
+      {
+        "prompt": "Add a badge to each card showing active status.",
+        "goldTree": {
+          "component": "Stack",
+          "props": {
+            "direction": "vertical",
+            "gap": "md"
+          },
+          "children": [
+            {
+              "component": "Card",
+              "props": {
+                "title": "Item 1"
+              },
+              "children": [
+                {
+                  "component": "Badge",
+                  "props": {
+                    "label": "Active",
+                    "variant": "default"
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "component": "Card",
+              "props": {
+                "title": "Item 2"
+              },
+              "children": [
+                {
+                  "component": "Badge",
+                  "props": {
+                    "label": "Active",
+                    "variant": "default"
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": "R1",
+            "assert": "hasComponent:STACK"
+          },
+          {
+            "id": "R2",
+            "assert": "hasComponent:CARD"
+          },
+          {
+            "id": "R3",
+            "assert": "hasComponent:BADGE"
+          }
+        ]
+      },
+      {
+        "prompt": "Change badge variant to success.",
+        "goldTree": {
+          "component": "Stack",
+          "props": {
+            "direction": "vertical",
+            "gap": "md"
+          },
+          "children": [
+            {
+              "component": "Card",
+              "props": {
+                "title": "Item 1"
+              },
+              "children": [
+                {
+                  "component": "Badge",
+                  "props": {
+                    "label": "Active",
+                    "variant": "success"
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": "R1",
+            "assert": "hasComponent:STACK"
+          },
+          {
+            "id": "R2",
+            "assert": "hasComponent:CARD"
+          },
+          {
+            "id": "R3",
+            "assert": "hasComponent:BADGE"
+          },
+          {
+            "id": "R4",
+            "assert": "hasProp:BADGE:variant=success"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "APR-4",
+    "turns": [
+      {
+        "prompt": "Dashboard with three stat cards: LOVE balance 42, spoon count 5, and active users 12.",
+        "goldTree": {
+          "component": "Stack",
+          "props": {
+            "direction": "horizontal",
+            "gap": "md"
+          },
+          "children": [
+            {
+              "component": "StatCard",
+              "props": {
+                "label": "LOVE Balance",
+                "value": "42",
+                "trend": "up"
+              },
+              "children": []
+            },
+            {
+              "component": "StatCard",
+              "props": {
+                "label": "Spoons",
+                "value": "5",
+                "trend": "neutral"
+              },
+              "children": []
+            },
+            {
+              "component": "StatCard",
+              "props": {
+                "label": "Active Users",
+                "value": "12",
+                "trend": "up"
+              },
+              "children": []
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": "R1",
+            "assert": "hasComponent:STACK"
+          },
+          {
+            "id": "R2",
+            "assert": "hasComponents:STATCARD>=3"
+          },
+          {
+            "id": "R3",
+            "assert": "hasProp:STATCARD:value=42"
+          },
+          {
+            "id": "R4",
+            "assert": "hasProp:STATCARD:value=5"
+          },
+          {
+            "id": "R5",
+            "assert": "hasProp:STATCARD:value=12"
+          }
+        ]
+      },
+      {
+        "prompt": "Add an alert below the stats showing system status healthy.",
+        "goldTree": {
+          "component": "Stack",
+          "props": {
+            "direction": "vertical",
+            "gap": "md"
+          },
+          "children": [
+            {
+              "component": "Stack",
+              "props": {
+                "direction": "horizontal",
+                "gap": "md"
+              },
+              "children": [
+                {
+                  "component": "StatCard",
+                  "props": {
+                    "label": "LOVE Balance",
+                    "value": "42",
+                    "trend": "up"
+                  },
+                  "children": []
+                },
+                {
+                  "component": "StatCard",
+                  "props": {
+                    "label": "Spoons",
+                    "value": "5",
+                    "trend": "neutral"
+                  },
+                  "children": []
+                },
+                {
+                  "component": "StatCard",
+                  "props": {
+                    "label": "Active Users",
+                    "value": "12",
+                    "trend": "up"
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "component": "Alert",
+              "props": {
+                "message": "System healthy",
+                "severity": "success"
+              },
+              "children": []
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": "R1",
+            "assert": "hasComponent:STACK"
+          },
+          {
+            "id": "R2",
+            "assert": "hasComponents:STATCARD>=3"
+          },
+          {
+            "id": "R3",
+            "assert": "hasProp:STATCARD:value=42"
+          },
+          {
+            "id": "R4",
+            "assert": "hasComponent:ALERT"
+          },
+          {
+            "id": "R5",
+            "assert": "hasProp:ALERT:severity=success"
+          }
+        ]
+      },
+      {
+        "prompt": "Change the alert to warning severity and update message to degraded.",
+        "goldTree": {
+          "component": "Stack",
+          "props": {
+            "direction": "vertical",
+            "gap": "md"
+          },
+          "children": [
+            {
+              "component": "Stack",
+              "props": {
+                "direction": "horizontal",
+                "gap": "md"
+              },
+              "children": [
+                {
+                  "component": "StatCard",
+                  "props": {
+                    "label": "LOVE Balance",
+                    "value": "42",
+                    "trend": "up"
+                  },
+                  "children": []
+                },
+                {
+                  "component": "StatCard",
+                  "props": {
+                    "label": "Spoons",
+                    "value": "5",
+                    "trend": "neutral"
+                  },
+                  "children": []
+                },
+                {
+                  "component": "StatCard",
+                  "props": {
+                    "label": "Active Users",
+                    "value": "12",
+                    "trend": "up"
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "component": "Alert",
+              "props": {
+                "message": "System degraded",
+                "severity": "warning"
+              },
+              "children": []
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": "R1",
+            "assert": "hasComponent:STACK"
+          },
+          {
+            "id": "R2",
+            "assert": "hasComponents:STATCARD>=3"
+          },
+          {
+            "id": "R3",
+            "assert": "hasProp:STATCARD:value=42"
+          },
+          {
+            "id": "R4",
+            "assert": "hasComponent:ALERT"
+          },
+          {
+            "id": "R5",
+            "assert": "hasProp:ALERT:severity=warning"
+          },
+          {
+            "id": "R6",
+            "assert": "hasProp:ALERT:message~degraded"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "APR-5",
+    "turns": [
+      {
+        "prompt": "Card with title Settings and a button labeled Save.",
+        "goldTree": {
+          "component": "Card",
+          "props": {
+            "title": "Settings"
+          },
+          "children": [
+            {
+              "component": "Button",
+              "props": {
+                "label": "Save",
+                "variant": "primary"
+              },
+              "children": []
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": "R1",
+            "assert": "hasComponent:CARD"
+          },
+          {
+            "id": "R2",
+            "assert": "hasProp:CARD:title=Settings"
+          },
+          {
+            "id": "R3",
+            "assert": "hasComponent:BUTTON"
+          },
+          {
+            "id": "R4",
+            "assert": "hasProp:BUTTON:label=Save"
+          }
+        ]
+      },
+      {
+        "prompt": "Add a text description saying Configure your preferences.",
+        "goldTree": {
+          "component": "Card",
+          "props": {
+            "title": "Settings"
+          },
+          "children": [
+            {
+              "component": "Text",
+              "props": {
+                "content": "Configure your preferences",
+                "size": "sm",
+                "weight": "normal"
+              },
+              "children": []
+            },
+            {
+              "component": "Button",
+              "props": {
+                "label": "Save",
+                "variant": "primary"
+              },
+              "children": []
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": "R1",
+            "assert": "hasComponent:CARD"
+          },
+          {
+            "id": "R2",
+            "assert": "hasProp:CARD:title=Settings"
+          },
+          {
+            "id": "R3",
+            "assert": "hasComponent:TEXT"
+          },
+          {
+            "id": "R4",
+            "assert": "hasProp:TEXT:content~Configure"
+          },
+          {
+            "id": "R5",
+            "assert": "hasComponent:BUTTON"
+          },
+          {
+            "id": "R6",
+            "assert": "hasProp:BUTTON:label=Save"
+          }
+        ]
+      },
+      {
+        "prompt": "Change button to secondary variant and add a cancel button.",
+        "goldTree": {
+          "component": "Card",
+          "props": {
+            "title": "Settings"
+          },
+          "children": [
+            {
+              "component": "Text",
+              "props": {
+                "content": "Configure your preferences",
+                "size": "sm",
+                "weight": "normal"
+              },
+              "children": []
+            },
+            {
+              "component": "Button",
+              "props": {
+                "label": "Save",
+                "variant": "secondary"
+              },
+              "children": []
+            },
+            {
+              "component": "Button",
+              "props": {
+                "label": "Cancel",
+                "variant": "ghost"
+              },
+              "children": []
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": "R1",
+            "assert": "hasComponent:CARD"
+          },
+          {
+            "id": "R2",
+            "assert": "hasProp:CARD:title=Settings"
+          },
+          {
+            "id": "R3",
+            "assert": "hasComponent:TEXT"
+          },
+          {
+            "id": "R4",
+            "assert": "hasComponent:BUTTON"
+          },
+          {
+            "id": "R5",
+            "assert": "hasComponents:BUTTON>=2"
+          },
+          {
+            "id": "R6",
+            "assert": "hasProp:BUTTON:label=Save"
+          },
+          {
+            "id": "R7",
+            "assert": "hasProp:BUTTON:label=Cancel"
+          }
+        ]
+      }
+    ]
+  }
+]

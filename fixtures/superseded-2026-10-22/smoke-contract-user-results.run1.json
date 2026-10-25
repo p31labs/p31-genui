@@ -1,0 +1,442 @@
+{
+  "mode": "json-object",
+  "model": "poolside/laguna-s-2.1:free",
+  "provider": "kilo",
+  "providerLabel": "Kilo",
+  "routed": false,
+  "baseUrl": "https://api.kilo.ai/api/gateway/v1",
+  "keySource": "file:/home/p31/.local/share/opencode/auth.json#kilo.key",
+  "servedModels": {
+    "poolside/laguna-s-2.1:free": 2
+  },
+  "constraintMode": "json-object",
+  "schemaDialect": "union-nullable",
+  "propContract": true,
+  "nodeShape": true,
+  "contractRole": "user",
+  "promptCount": 6,
+  "firstPassRate": 1,
+  "compilePassRate": 1,
+  "endToEndSuccessRate": 1,
+  "endToEndReached": 6,
+  "endToEndSucceeded": 6,
+  "requirementPassRate": 1,
+  "avgRequirementRate": 1,
+  "avgRequirementsFailed": 0,
+  "requirementsPerSpec": 3,
+  "avgComponentF1": 0.6,
+  "avgPropAccuracy": 0.1111111111111111,
+  "avgRootPropAccuracy": 0.1111111111111111,
+  "wrongValidSchemaRate": 0,
+  "healedRate": 0,
+  "healKinds": {},
+  "healKindsRate": {},
+  "avgRepairIterations": 1,
+  "repairsPerAcceptedSpec": 1,
+  "avgTokens": 1382,
+  "tokensPerAcceptedSpec": 1382,
+  "avgLatencyMs": 12507.333333333334,
+  "totalTokens": 8292,
+  "callCount": 12,
+  "rateLimitHits": 0,
+  "providerErrorCount": 0,
+  "armFingerprint": "0ee52e11dd13ca4deaf03cf1dfc4b35364c5a6accbe7707bd9a565200b92318c",
+  "armConfig": {
+    "provider": "kilo",
+    "baseUrl": "https://api.kilo.ai/api/gateway/v1",
+    "model": "poolside/laguna-s-2.1:free",
+    "mode": "json-object",
+    "constraintMode": "json-object",
+    "propContract": true,
+    "nodeShape": true,
+    "schemaDialect": "union-nullable",
+    "promptFile": "packages/genui/fixtures/live-prompts.json",
+    "promptSetHash": "e7b0a4034560027706486b70592d1549178e1b11c18bf9b23b0c6491921d1761",
+    "requirementSetHash": "bee9737064c587eed8bcb182b7079c1ad5f7cc79729b30e3c23f122dedf6e7d3",
+    "scorerVersion": "requirements-2.0.0"
+  },
+  "armBatches": 6,
+  "results": [
+    {
+      "id": "L4",
+      "prompt": "Alert warning about low balance",
+      "compiled": true,
+      "firstPass": true,
+      "requirementsTotal": 3,
+      "requirementsPassed": 3,
+      "requirementRate": 1,
+      "requirementsMet": true,
+      "failedRequirementIds": [],
+      "failedRequirements": [],
+      "tree": {
+        "component": "Card",
+        "props": {
+          "title": "Account Overview",
+          "padding": "md"
+        },
+        "children": [
+          {
+            "component": "Stack",
+            "props": {
+              "direction": "vertical",
+              "gap": "md"
+            },
+            "children": [
+              {
+                "component": "Alert",
+                "props": {
+                  "message": "Your account balance is low. Please add funds to avoid service interruption.",
+                  "severity": "warning"
+                }
+              },
+              {
+                "component": "StatCard",
+                "props": {
+                  "label": "Current Balance",
+                  "value": "$25.00",
+                  "trend": "down"
+                }
+              },
+              {
+                "component": "Button",
+                "props": {
+                  "label": "Add Funds",
+                  "variant": "primary",
+                  "onClick": "addFunds"
+                }
+              },
+              {
+                "component": "Text",
+                "props": {
+                  "content": "Minimum recommended balance: $50.00",
+                  "size": "sm",
+                  "weight": "normal"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "compileErrors": [],
+      "componentF1": 0.2857142857142857,
+      "propAccuracy": 0,
+      "rootPropAccuracy": 0,
+      "semanticallyWrong": false,
+      "errorCodes": [],
+      "repairIterations": 1,
+      "healed": false,
+      "healKinds": {},
+      "tokens": 1361,
+      "latencyMs": 15941
+    },
+    {
+      "id": "L8",
+      "prompt": "StatCard showing revenue 10000 trending up",
+      "compiled": true,
+      "firstPass": true,
+      "requirementsTotal": 4,
+      "requirementsPassed": 4,
+      "requirementRate": 1,
+      "requirementsMet": true,
+      "failedRequirementIds": [],
+      "failedRequirements": [],
+      "tree": {
+        "component": "StatCard",
+        "props": {
+          "label": "Revenue",
+          "value": "$10,000",
+          "trend": "up"
+        },
+        "id": "statcard-1"
+      },
+      "compileErrors": [],
+      "componentF1": 1,
+      "propAccuracy": 0.6666666666666666,
+      "rootPropAccuracy": 0.6666666666666666,
+      "semanticallyWrong": false,
+      "errorCodes": [],
+      "repairIterations": 1,
+      "healed": false,
+      "healKinds": {},
+      "tokens": 1095,
+      "latencyMs": 4673
+    },
+    {
+      "id": "L9",
+      "prompt": "Alert error about connection failure",
+      "compiled": true,
+      "firstPass": true,
+      "requirementsTotal": 3,
+      "requirementsPassed": 3,
+      "requirementRate": 1,
+      "requirementsMet": true,
+      "failedRequirementIds": [],
+      "failedRequirements": [],
+      "tree": {
+        "component": "Card",
+        "props": {
+          "title": "Connection Error",
+          "padding": "md"
+        },
+        "children": [
+          {
+            "component": "Stack",
+            "props": {
+              "direction": "vertical",
+              "gap": "md"
+            },
+            "children": [
+              {
+                "component": "Alert",
+                "props": {
+                  "message": "Connection failed. Please check your network settings and try again.",
+                  "severity": "error"
+                }
+              },
+              {
+                "component": "Button",
+                "props": {
+                  "label": "Retry",
+                  "variant": "primary",
+                  "onClick": "retryConnection"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "connection-error-card"
+      },
+      "compileErrors": [],
+      "componentF1": 0.4,
+      "propAccuracy": 0,
+      "rootPropAccuracy": 0,
+      "semanticallyWrong": false,
+      "errorCodes": [],
+      "repairIterations": 1,
+      "healed": false,
+      "healKinds": {},
+      "tokens": 1241,
+      "latencyMs": 11548
+    },
+    {
+      "id": "L12",
+      "prompt": "Alert success for payment complete",
+      "compiled": true,
+      "firstPass": true,
+      "requirementsTotal": 3,
+      "requirementsPassed": 3,
+      "requirementRate": 1,
+      "requirementsMet": true,
+      "failedRequirementIds": [],
+      "failedRequirements": [],
+      "tree": {
+        "component": "Stack",
+        "props": {
+          "direction": "vertical",
+          "gap": "lg"
+        },
+        "children": [
+          {
+            "component": "Alert",
+            "props": {
+              "message": "Payment completed successfully!",
+              "severity": "success"
+            },
+            "id": "alert-success"
+          },
+          {
+            "component": "StatCard",
+            "props": {
+              "label": "Amount Paid",
+              "value": "$129.99",
+              "trend": "neutral"
+            },
+            "id": "statcard-amount"
+          },
+          {
+            "component": "Card",
+            "props": {
+              "title": "Transaction Details",
+              "padding": "md"
+            },
+            "children": [
+              {
+                "component": "Text",
+                "props": {
+                  "content": "Transaction ID: TXN-789456123",
+                  "size": "md",
+                  "weight": "normal"
+                },
+                "id": "text-txn-id"
+              },
+              {
+                "component": "Text",
+                "props": {
+                  "content": "Date: December 15, 2023",
+                  "size": "md",
+                  "weight": "normal"
+                },
+                "id": "text-date"
+              },
+              {
+                "component": "Text",
+                "props": {
+                  "content": "Payment Method: Visa ending in 4242",
+                  "size": "md",
+                  "weight": "normal"
+                },
+                "id": "text-method"
+              },
+              {
+                "component": "Text",
+                "props": {
+                  "content": "Status: Completed",
+                  "size": "md",
+                  "weight": "normal"
+                },
+                "id": "text-status"
+              }
+            ],
+            "id": "card-transaction"
+          },
+          {
+            "component": "Button",
+            "props": {
+              "label": "Continue Shopping",
+              "variant": "primary",
+              "onClick": "navigateToDashboard"
+            },
+            "id": "button-continue"
+          }
+        ],
+        "id": "stack-root"
+      },
+      "compileErrors": [],
+      "componentF1": 0.19999999999999998,
+      "propAccuracy": 0,
+      "rootPropAccuracy": 0,
+      "semanticallyWrong": false,
+      "errorCodes": [],
+      "repairIterations": 1,
+      "healed": false,
+      "healKinds": {},
+      "tokens": 1821,
+      "latencyMs": 19612
+    },
+    {
+      "id": "L15",
+      "prompt": "Card with stat and button",
+      "compiled": true,
+      "firstPass": true,
+      "requirementsTotal": 3,
+      "requirementsPassed": 3,
+      "requirementRate": 1,
+      "requirementsMet": true,
+      "failedRequirementIds": [],
+      "failedRequirements": [],
+      "tree": {
+        "component": "Card",
+        "props": {
+          "title": "Stat Overview",
+          "padding": "md"
+        },
+        "children": [
+          {
+            "component": "Stack",
+            "props": {
+              "direction": "vertical",
+              "gap": "md"
+            },
+            "children": [
+              {
+                "component": "StatCard",
+                "props": {
+                  "label": "LOVE Balance",
+                  "value": "42",
+                  "trend": "up"
+                }
+              },
+              {
+                "component": "Button",
+                "props": {
+                  "label": "View Details",
+                  "variant": "primary",
+                  "onClick": "viewDetails"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "root"
+      },
+      "compileErrors": [],
+      "componentF1": 0.8571428571428571,
+      "propAccuracy": 0,
+      "rootPropAccuracy": 0,
+      "semanticallyWrong": false,
+      "errorCodes": [],
+      "repairIterations": 1,
+      "healed": false,
+      "healKinds": {},
+      "tokens": 1324,
+      "latencyMs": 9684
+    },
+    {
+      "id": "L35",
+      "prompt": "Success banner with checkmark badge",
+      "compiled": true,
+      "firstPass": true,
+      "requirementsTotal": 3,
+      "requirementsPassed": 3,
+      "requirementRate": 1,
+      "requirementsMet": true,
+      "failedRequirementIds": [],
+      "failedRequirements": [],
+      "tree": {
+        "component": "Card",
+        "props": {
+          "title": "Success",
+          "padding": "md"
+        },
+        "children": [
+          {
+            "component": "Stack",
+            "props": {
+              "direction": "horizontal",
+              "gap": "sm"
+            },
+            "children": [
+              {
+                "component": "Badge",
+                "props": {
+                  "label": "✓",
+                  "variant": "success"
+                }
+              },
+              {
+                "component": "Text",
+                "props": {
+                  "content": "Operation completed successfully",
+                  "size": "md",
+                  "weight": "normal"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "success-banner"
+      },
+      "compileErrors": [],
+      "componentF1": 0.8571428571428571,
+      "propAccuracy": 0,
+      "rootPropAccuracy": 0,
+      "semanticallyWrong": false,
+      "errorCodes": [],
+      "repairIterations": 1,
+      "healed": false,
+      "healKinds": {},
+      "tokens": 1450,
+      "latencyMs": 13586
+    }
+  ]
+}
